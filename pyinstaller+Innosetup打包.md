@@ -44,7 +44,7 @@
         StringStruct('LegalTrademarks', ''), 文件的所有注册商标信息
         StringStruct('ProductVersion', '1.0.0.0')])  产品版本
       ]), 
-    VarFileInfo([VarStruct('Translation', [0x0804, 1200])])  语言信息 0x0804：中文简体，1200：中国
+    VarFileInfo([VarStruct('Translation', [0x0804, 1200])])  语言信息 0x0804：中文简体,1200：中国
   ]
     
   
