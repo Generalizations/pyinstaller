@@ -121,8 +121,9 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 #### Add Version Resource To executables
 + Capturing Windows Version Data
 ```
-pyi-grab_version executable_with_version_resource
+pyi-grab_version executable_with_version_resource.exe
 ```
+在当前目录生成一个版本文本文件，内容为executable_with_version_resource.exe的版本信息
 + Editing The Version Information To Adapt It To Your Program<br>
 filevers(1,2,3,4)<br>
 prodvers(1,2,3,4)<br>
