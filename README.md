@@ -20,6 +20,8 @@ Pyinstaller是一种将python程序打包成独立可执行的工具。Inno Setu
 ### Pyinstaller Installation
     pip install pyinstaller
     pyinstaller -v
+执行pyinstaller -v，若结果显示pyinstaller版本号，则安装成功，如下图所示：<br>
+![Inno Setup 1](https://github.com/wangrui11111/pyinstaller/blob/main/images/19.PNG)<br>
 ### Inno Setup Installation
 Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 ![Inno Setup 1](https://github.com/wangrui11111/pyinstaller/blob/main/images/1.png)<br>
@@ -155,4 +157,33 @@ VarFileInfo([VarStruct('Translation', [0x0804, 1200])])  语言信息 0x0804：�
     ```
     > pyi-makespec --version-file 将版本文本文件写入配置文件<br>
     > pyinstaller /path/yourscript.spec 将版本文本文件转为版本资源打包到可执行文件
-## 
+### 安装包制作
+- 打开Inno Setup后，选择创建一个脚本，并使用导向制作，如下图所示：<br>
+![Inno Setup 3](https://github.com/wangrui11111/pyinstaller/blob/main/images/3.png)
+- 下一步<br>
+![Inno Setup 4](https://github.com/wangrui11111/pyinstaller/blob/main/images/4.png)
+- 根据实际情况，填写以下相关信息，应用程序名称（必填）、应用程序版本（必填）、应用程序发布者、应用程序网站，如下图所示：<br>
+![Inno Setup 5](https://github.com/wangrui11111/pyinstaller/blob/main/images/5.png)
+- 配置应用程序安装路径相关信息，如下图所示：<br>
+![Inno Setup 6](https://github.com/wangrui11111/pyinstaller/blob/main/images/6.png)
+- 添加应用程序及其运行所需要的依赖文件：<br>
+![Inno Setup 7](https://github.com/wangrui11111/pyinstaller/blob/main/images/7.png)
+- 填写关联到应用程序的文件类型名，如下图所示：<br>
+![Inno Setup 8](https://github.com/wangrui11111/pyinstaller/blob/main/images/8.png)
+- 创建快捷方式：<br>
+![Inno Setup 9](https://github.com/wangrui11111/pyinstaller/blob/main/images/9.png)
+- 添加安装过程中显示的信息文件：<br>
+![Inno Setup 10](https://github.com/wangrui11111/pyinstaller/blob/main/images/10.png)
+- 配置安装模式：<br>
+![Inno Setup 11](https://github.com/wangrui11111/pyinstaller/blob/main/images/11.png)
+- 配置安装语言：<br>
+![Inno Setup 12](https://github.com/wangrui11111/pyinstaller/blob/main/images/12.png)
+- 配置安装包信息：<br>
+![Inno Setup 13](https://github.com/wangrui11111/pyinstaller/blob/main/images/13.png)
+- 下一步：<br>
+![Inno Setup 14](https://github.com/wangrui11111/pyinstaller/blob/main/images/14.png)
+- Finish：<br>
+![Inno Setup 15](https://github.com/wangrui11111/pyinstaller/blob/main/images/15.png)<br>
+![Inno Setup 16](https://github.com/wangrui11111/pyinstaller/blob/main/images/16.png)<br>
+![Inno Setup 17](https://github.com/wangrui11111/pyinstaller/blob/main/images/17.png)<br>
+![Inno Setup 18](https://github.com/wangrui11111/pyinstaller/blob/main/images/18.png)
