@@ -22,6 +22,7 @@ Pyinstaller是一种将python程序打包成独立可执行的工具。Inno Setu
     pyinstaller -v
 ### Inno Setup Installation
 Inno Setup官网: https://jrsoftware.org/isinfo.php
+![Inno Setup 1](https://github.com/wangrui11111/pyinstaller/blob/main/images/1.png)
 ## Getting Started
 ### Packaging
     pyinstaller /path/yourscript.py
