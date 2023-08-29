@@ -12,7 +12,7 @@ Pyinstaller是一种将python程序打包成独立可执行的工具。Inno Setu
             - [What To Bundle, Where To Search](#What-To-Bundle-Where-To-Search)
             - [How To Generate](#How-To-Generate)
             - [Windows And Mac Os X Specific Options](#Windows-And-Mac-Os-X-Specific-Options)
-            - [Windows Side-By-Side Assembly Searching Options (Advanced)](#Windows-Side--By--Side-Assembly-Searching-Options-(Advanced))
+            - [Windows Side-By-Side Assembly Searching Options](#Windows-Side--By--Side-Assembly-Searching-Options)
             - [Mac Os Specific Options](#Mac-Os-Specific-Options)
             - [Rarely Used Special Options](#Rarely-Used-Special-Options)
         - [添加版本资源](#Add-Version-Resource-To-executables)
@@ -94,7 +94,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php
 |-r RESOURCE,<br> --resource RESOURCE|向Windows可执行文件添加或更新资源。|The RESOURCE is one to four items, FILE[,TYPE[,NAME[,LANGUAGE]]].<br>FILE可以是一个数据文件或exe/dll文件<br>对于数据文件，至少TYPE和NAME必须被指定，LANGUAGE默认0或也许被指定为wildcard *，更新给定的TYPE和NAME的所有资源<br>对于exe/dll文件，如果TYPE, NAME 和 LANGUAGE被忽略或者被指定为wildcard *，所有资源文件将被添加/更新到最终的可执行文件|
 |--uac-admin|创建一个Manifest，该Manifest将在应用程序启动时请求提升。|无|
 |--uac-uiaccess|允许升级应用程序与远程桌面一起工作。|无|
-#### Windows Side-By-Side Assembly Searching Options (Advanced)
+#### Windows Side-By-Side Assembly Searching Options
 |参数|作用|说明|
 |:---|:---|:---|
 |--win-private-assemblies|Any Shared Assemblies bundled into the application will be changed into Private Assemblies.|This means the exact versions of these assemblies will always be used, and any newer versions installed on user machines at the system level will be ignored.|
