@@ -1,7 +1,7 @@
 # Pyinstaller+Inno Setup Packaging
 Pyinstaller是一种将python程序打包成独立可执行的工具。Inno Setup是一种制作安装包的工具。<br>
 - [安装准备](#Installation)
-    - [Pyinstaller Installation](#PyinstallerInstallation)
+    - [Pyinstaller Installation](#Pyinstaller-Installation)
 ## Installation
 ### Pyinstaller Installation
     pip install pyinstaller
