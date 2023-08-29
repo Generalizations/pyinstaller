@@ -16,6 +16,7 @@ Pyinstaller是一种将python程序打包成独立可执行的工具。Inno Setu
             - [Mac Os Specific Options](#Mac-Os-Specific-Options)
             - [Rarely Used Special Options](#Rarely-Used-Special-Options)
         - [添加版本资源](#Add-Version-Resource-To-executables)
+    - [安装包制作](#安装包制作)
 ## Installation
 ### Pyinstaller Installation
     pip install pyinstaller
@@ -32,12 +33,12 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 生成dist文件、build文件、spec文件。dist文件夹包含相关依赖和可执行文件。build文件用来存放打包时的日志文件等。spec文件是可执行文件的相关配置文件。
 > 打包完成后，build文件可直接删除，不影响可执行程序。<br/>
 > spec文件可以打开后直接修改，也可以通过pyinstaller的参数进行修改，如pyi-makespec -w /path/yourscript.py/。修改完成后，将修改的配置打包到可执行文件pyinstaller /path/yourscript.spec。
-### Pyinstaller Arguments
-#### Position Arguments
+#### Pyinstaller Arguments
+##### Position Arguments
 |参数|作用|
 |:---|:---|
 |scriptname|Name of scriptfiles to be processed or exactly one .spec file. If a .spec file is specified, most options are unnecessary and are ignored.|
-#### Optional Arguments
+##### Optional Arguments
 |参数|作用|说明|
 |:---|:---|:---|
 |-h, --help|显示所有帮助信息|无|
@@ -49,7 +50,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 |-a, --ascii|不包含unicode编码支持|默认:included if available|
 |--clean|在本次编译之前，清空上次生成的各种文件|默认:不清除|
 |--log-level LEVEL|编译时控制台信息中的详细信息|LEVEL may be one of TRACE, DEBUG, INFO, WARN, DEPRECATION, ERROR, FATAL (default: INFO). Also settable via and overrides the PYI_LOG_LEVEL environment variable.|
-#### What To Generate
+##### What To Generate
 |参数|作用|说明|
 |:---|:---|:---|
 |-D, --onedir|生成包含一个可执行文件的one-folder(默认)|生成结果是一个目录，各种第三方依赖、资源和exe同时存储在该目录|
@@ -57,7 +58,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 |--specpath DIR|指定spec文件的存储目录|默认:当前目录|
 |-n NAME, --name NAME|生成的.exe文件和.spec的文件名|默认:和脚本同名|
 |-n NAME, --name NAME|要分配给打包应用程序和spec文件的名称|默认:first script’s basename|
-#### What To Bundle, Where To Search
+##### What To Bundle, Where To Search
 |参数|作用|说明|
 |:---|:---|:---|
 |--add-data <SRC;DEST or SRC:DEST>|打包其他非二进制资源,例如:图片|用法：pyinstaller /path/yourscript.py --add-data=src;dest。windows以;分割，linux以:分割|
@@ -74,7 +75,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 |--runtime-hook RUNTIME_HOOKS|Path to a custom runtime hook file. |如果设置了此参数，则runtime-hook会在运行main.py之前被运行|
 |--exclude-module EXCLUDES|Optional module or package (the Python name, not the path name) that will be ignored (as though it was not found). |打包时忽略用不到的依赖库，减少文件大小|
 |--splash IMAGE_FILE|(EXPERIMENTAL) Add an splash screen with the image IMAGE_FILE to the application.|The splash screen can display progress updates while unpacking.|
-#### How To Generate
+##### How To Generate
 |参数|作用|说明|
 |:---|:---|:---|
 |-d {all,imports,bootloader,noarchive},<br> --debug {all,imports,bootloader,noarchive}|应用程序执行时，输出log，有助于排查错误|默认:不输出log|
@@ -82,7 +83,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 |-s, --strip|Apply a symbol-table strip to the executable and shared libs|不建议在Windows系统使用|
 |--noupx|即使UPX可用，也不要使用|works differently between Windows and *nix|
 |--upx-exclude FILE|使用upx时，防止二进制文件被压缩。|用于UPX压缩时，损坏了某些二进制文件。FILE是没有路径的二进制文件的文件名，该参数可多次使用|
-#### Windows And Mac Os X Specific Options
+##### Windows And Mac Os X Specific Options
 |参数|作用|说明|
 |:---|:---|:---|
 |-c, --console, --nowindowed|可执行文件工作时显示控制台窗口(默认)|On Windows this option has no effect if the first script is a ‘.pyw’ file.|
@@ -90,7 +91,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 |-i <FILE.ico or FILE.exe,ID or FILE.icns or Image or "NONE">,<br> --icon <FILE.ico or FILE.exe,ID or FILE.icns or Image or "NONE">|给可执行文件添加图片|FILE.ico: apply the icon to a Windows executable.<br> FILE.exe,ID: extract the icon with ID from an exe.<br> FILE.icns: apply the icon to the .app bundle on Mac OS. <br>如果输入的图像文件不是平台格式（Windows上为ico，Mac上为icns），PyInstaller会尝试使用Pillow将图标转换为正确的格式。|
 |--disable-windowed-traceback|Disable traceback dump of unhandled exception in windowed (noconsole) mode (Windows and macOS only), and instead display a message that this feature is disabled.|无|
 > 如果需要安装Pillow，pip install Pillow
-#### Windows Specific Options
+##### Windows Specific Options
 |参数|作用|说明|
 |:---|:---|:---|
 |--version-file FILE|添加版本信息文件|用法:pyinstaller --version-file version_file_info.txt|
@@ -98,12 +99,12 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 |-r RESOURCE,<br> --resource RESOURCE|向Windows可执行文件添加或更新资源。|The RESOURCE is one to four items, FILE[,TYPE[,NAME[,LANGUAGE]]].<br>FILE可以是一个数据文件或exe/dll文件<br>对于数据文件，至少TYPE和NAME必须被指定，LANGUAGE默认0或也许被指定为wildcard *，更新给定的TYPE和NAME的所有资源<br>对于exe/dll文件，如果TYPE, NAME 和 LANGUAGE被忽略或者被指定为wildcard *，所有资源文件将被添加/更新到最终的可执行文件|
 |--uac-admin|创建一个Manifest，该Manifest将在应用程序启动时请求提升。|无|
 |--uac-uiaccess|允许升级应用程序与远程桌面一起工作。|无|
-#### Windows Side-By-Side Assembly Searching Options
+##### Windows Side-By-Side Assembly Searching Options
 |参数|作用|说明|
 |:---|:---|:---|
 |--win-private-assemblies|Any Shared Assemblies bundled into the application will be changed into Private Assemblies.|This means the exact versions of these assemblies will always be used, and any newer versions installed on user machines at the system level will be ignored.|
 |--win-no-prefer-redirects|While searching for Shared or Private Assemblies to bundle into the application, PyInstaller will prefer not to follow policies that redirect to newer versions, and will try to bundle the exact versions of the assembly.|无|
-#### Mac Os Specific Options
+##### Mac Os Specific Options
 |参数|作用|说明|
 |:---|:---|:---|
 |--argv-emulation|Enable argv emulation for macOS app bundles. |If enabled, the initial open document/URL event is processed by the bootloader and the passed file paths or URLs are appended to sys.argv.|
@@ -111,12 +112,12 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 |--target-architecture ARCH, --target-arch ARCH|Target architecture (macOS only; valid values: x86_64, arm64, universal2).|Enables switching between universal2 and single-arch version of frozen application (provided python installation supports the target architecture).<br> If not target architecture is not specified, the current running architecture is targeted.|
 |--codesign-identity IDENTITY|Code signing identity (macOS only). |Use the provided identity to sign collected binaries and generated executable. <br>If signing identity is not provided, ad- hoc signing is performed instead.|
 |--osx-entitlements-file FILENAME|Entitlements file to use when code-signing the collected binaries (macOS only).|无|
-#### Rarely Used Special Options
+##### Rarely Used Special Options
 |参数|作用|说明|
 |:---|:---|:---|
 |--runtime-tmpdir PATH|Where to extract libraries and support files in onefile-mode.|If this option is given, the bootloader will ignore any temp-folder location defined by the run-time OS.<br> The _MEIxxxxxx-folder will be created here. Please use this option only if you know what you are doing.|
 |--bootloader-ignore-signals|Tell the bootloader to ignore signals rather than forwarding them to the child process. |Useful in situations where for example a supervisor process signals both the bootloader and the child (e.g., via a process group) to avoid signalling the child twice.|
-### Add Version Resource To executables
+#### Add Version Resource To executables
 + Capturing Windows Version Data
 ```
 pyi-grab_version executable_with_version_resource
