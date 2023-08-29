@@ -2,13 +2,29 @@
 Pyinstaller是一种将python程序打包成独立可执行的工具。Inno Setup是一种制作安装包的工具。<br>
 - [安装准备](#Installation)
     - [Pyinstaller Installation](#Pyinstaller-Installation)
+    - [Inno Setup Installation](#Inno-Setup-Installation)
+- [Getting Started](#Getting-Started)
+    -[Packaging](#Packaging)
+    -[Pyinstaller Arguments](Pyinstaller-Arguments)
+        -[Position Arguments](Position-Arguments)
+        -[Optional Arguments](Optional-Arguments)
+        -[What To Generate](What-To-Generate)
+        -[What To Bundle, Where To Search](#What-To-Bundle-Where-To-Search)
+        -[How To Generate](#How-To-Generate)
+        -[Windows And Mac Os X Specific Options](#Windows-And-Mac-Os-X-Specific-Options)
+        -[Windows Specific Options](#Windows-Specific-Options)
+        -[Windows Side-By-Side Assembly Searching Options (Advanced)](#Windows-Side-By-Side-Assembly-Searching-Options-(Advanced))
+        -[Mac Os Specific Options](#Mac-Os-Specific-Options)
+        -[Rarely Used Special Options](#Rarely-Used-Special-Options)
+    -[添加版本资源](#Add-Version-Resource-To-executables)
 ## Installation
 ### Pyinstaller Installation
     pip install pyinstaller
     pyinstaller -v
 ### Inno Setup Installation
 Inno Setup官网: https://jrsoftware.org/isinfo.php
-## Packaging
+## Getting Started
+### Packaging
     pyinstaller /path/yourscript.py
 生成dist文件、build文件、spec文件。dist文件夹包含相关依赖和可执行文件。build文件用来存放打包时的日志文件等。spec文件是可执行文件的相关配置文件。
 > 打包完成后，build文件可直接删除，不影响可执行程序。<br/>
