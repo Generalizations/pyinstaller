@@ -8,7 +8,7 @@ Pyinstaller是一种将python程序打包成独立可执行的工具。Inno Setu
 Inno Setup官网: https://jrsoftware.org/isinfo.php
 ## Packaging
     pyinstaller /path/yourscript.py
-生成dist文件、build文件、spec文件。dist文件夹包含相关依赖和可执行文件。buid文件用来存放打包时的日志文件等。spec文件是可执行文件的相关配置文件。
+生成dist文件、build文件、spec文件。dist文件夹包含相关依赖和可执行文件。build文件用来存放打包时的日志文件等。spec文件是可执行文件的相关配置文件。
 > 打包完成后，build文件可直接删除，不影响可执行程序。<br/>
 > spec文件可以打开后直接修改，也可以通过pyinstaller的参数进行修改，如pyi-makespec -w /path/yourscript.py/。修改完成后，将修改的配置打包到可执行文件pyinstaller /path/yourscript.spec。
 ### Pyinstaller Arguments
