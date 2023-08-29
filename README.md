@@ -90,7 +90,8 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 |-w, --windowed, --noconsole|Windows and Mac OS X:可执行文件工作时不显示控制台窗口|On Mac OS this also triggers building a Mac OS .app bundle.<br> On Windows this option is automatically set if the first script is a ‘.pyw’ file.<br> This option is ignored on *NIX systems.|
 |-i <FILE.ico or FILE.exe,ID or FILE.icns or Image or "NONE">,<br> --icon <FILE.ico or FILE.exe,ID or FILE.icns or Image or "NONE">|给可执行文件添加图片|FILE.ico: apply the icon to a Windows executable.<br> FILE.exe,ID: extract the icon with ID from an exe.<br> FILE.icns: apply the icon to the .app bundle on Mac OS. <br>如果输入的图像文件不是平台格式（Windows上为ico，Mac上为icns），PyInstaller会尝试使用Pillow将图标转换为正确的格式。|
 |--disable-windowed-traceback|Disable traceback dump of unhandled exception in windowed (noconsole) mode (Windows and macOS only), and instead display a message that this feature is disabled.|无|
-> 如果需要安装Pillow，pip install Pillow
+> 如果需要安装Pillow，pip install Pillow，安装完成后，输入pip show Pillow，若显示版本信息，则安装成功，如下图：<br>
+> ![Inno Setup 20](https://github.com/wangrui11111/pyinstaller/blob/main/images/20.PNG)
 ##### Windows Specific Options
 |参数|作用|说明|
 |:---|:---|:---|
