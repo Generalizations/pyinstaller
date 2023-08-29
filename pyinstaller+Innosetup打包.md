@@ -8,11 +8,9 @@ Pyinstaller是一种将python程序打包成独立可执行的工具。Inno Setu
 Inno Setup官网: https://jrsoftware.org/isinfo.php
 ## Packaging
     pyinstaller /path/yourscript.py
-    or
-    pyinstaller -D /path/yourscript.py
 生成dist文件、build文件、spec文件。dist文件夹包含相关依赖和可执行文件。buid文件用来存放打包时的日志文件等。spec文件是可执行文件的相关配置文件。
 > 打包完成后，build文件可直接删除，不影响可执行程序。<br/>
-> spec文件可以打开后直接修改，也可以通过pyinstaller的参数进行修改，如pyi-makespec -w /path/yourscript.py/。修改完成后，对可执行文件进行相关配置pyinstaller /path/yourscript.spec。
+> spec文件可以打开后直接修改，也可以通过pyinstaller的参数进行修改，如pyi-makespec -w /path/yourscript.py/。修改完成后，将修改的配置打包到可执行文件pyinstaller /path/yourscript.spec。
 ### Pyinstaller Arguments
 #### Position Arguments
 |参数|作用|
@@ -102,8 +100,10 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php
 ```
 pyi-grab_version executable_with_version_resource
 ```
-+ Editing The Version Information To Adapt It To Your Program
-filevers(文件版本)和prodvers(产品版本)需要4个元素，分别是主版本号、次版本号、修订版本号、编译版本号
++ Editing The Version Information To Adapt It To Your Program<br>
+filevers(1,2,3,4)<br>
+prodvers(1,2,3,4)<br>
+filevers(文件版本)和prodvers(产品版本)需要4个元素，分别是主版本号、次版本号、修订版本号、编译版本号,根据实际情况修改
 ```
 StringTable——包含启动程序要显示的版本信息
 StringFileInfo(
@@ -134,5 +134,6 @@ VarFileInfo([VarStruct('Translation', [0x0804, 1200])])  语言信息 0x0804：�
     pyi-makespec --version-file=version_text_file /path/yourscript.py 
     pyinstaller /path/yourscript.spec
     ```
-    > pyi-makespec --version-file 给配置文件添加版本文件<br>
-    > pyinstaller /path/yourscript.spec 将版本资源打包到可执行文件
+    > pyi-makespec --version-file 将版本文本文件写入配置文件<br>
+    > pyinstaller /path/yourscript.spec 将版本文本文件转为版本资源打包到可执行文件
+## 
