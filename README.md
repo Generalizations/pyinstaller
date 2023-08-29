@@ -12,7 +12,7 @@ Pyinstaller是一种将python程序打包成独立可执行的工具。Inno Setu
             - [What To Bundle, Where To Search](#What-To-Bundle-Where-To-Search)
             - [How To Generate](#How-To-Generate)
             - [Windows And Mac Os X Specific Options](#Windows-And-Mac-Os-X-Specific-Options)
-            - [Windows Side-By-Side Assembly Searching Options (Advanced)](#Windows-Side--By--Side-Assembly-Searching-Options-Advanced)
+            - [Windows Side-By-Side Assembly Searching Options (Advanced)](#Windows-Side-By-Side-Assembly-Searching-Options-(Advanced))
             - [Mac Os Specific Options](#Mac-Os-Specific-Options)
             - [Rarely Used Special Options](#Rarely-Used-Special-Options)
         - [添加版本资源](#Add-Version-Resource-To-executables)
