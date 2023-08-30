@@ -30,94 +30,94 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 ## Getting Started
 ### Packaging
     pyinstaller /path/yourscript.py
-生成dist文件、build文件、spec文件。dist文件夹包含相关依赖和可执行文件。build文件用来存放打包时的日志文件等。spec文件是可执行文件的相关配置文件。
-> 打包完成后，build文件可直接删除，不影响可执行程序。<br/>
-> spec文件可以打开后直接修改，也可以通过pyinstaller的参数进行修改，如pyi-makespec -w /path/yourscript.py/。修改完成后，将修改的配置打包到可执行文件pyinstaller /path/yourscript.spec。
+- 生成**dist**文件、**build**文件、.**spec**文件。
+- **dist**文件夹：包含**相关依赖**和**可执行文件**。
+- **build**文件夹：用来存放打包时的**临时**文件等。 打包完成后，build文件可直接**删除**，不影响可执行程序。
+- .**spec**文件：是可执行文件的相关**配置**文件。此文件可以打开后直接修改，也可以通过**pyinstaller**的**参数**进行修改，如`pyi-makespec -w /path/yourscript.py`。修改完成后，将修改的配置打包到可执行文件`pyinstaller /path/yourscript.spec`。
 #### Pyinstaller Arguments
 ##### Position Arguments
 |参数|作用|
 |:---|:---|
-|scriptname|Name of scriptfiles to be processed or exactly one .spec file. If a .spec file is specified, most options are unnecessary and are ignored.|
+|scriptname|<details><summary>**Name of scriptfiles** to be processed or exactly **one .spec file**.</summary> <p>If a .spec file is specified, most options are unnecessary and are ignored.</p></details>|
 ##### Optional Arguments
-|参数|作用|说明|
-|:---|:---|:---|
-|-h, --help|显示所有帮助信息|无|
-|-v, --version|显示pyinstaller版本号|无|
-|--distpath DIR|打包生成的文件路径|默认:当前路径下的dist文件夹内|
-|--workpath WORKPATH|打包过程中生成的日志文件路径|默认:当前目录下的build文件内|
-|-y, --noconfirm|如果dist文件夹内已经存在生成文件，则不询问用户，直接覆盖|默认:询问用户是否覆盖|
-|--upx-dir UPX_DIR|Path to UPX utility|默认: search the execution path|
-|-a, --ascii|不包含unicode编码支持|默认:included if available|
-|--clean|在本次编译之前，清空上次生成的各种文件|默认:不清除|
-|--log-level LEVEL|编译时控制台信息中的详细信息|LEVEL may be one of TRACE, DEBUG, INFO, WARN, DEPRECATION, ERROR, FATAL (default: INFO). Also settable via and overrides the PYI_LOG_LEVEL environment variable.|
+|参数|作用|
+|:---|:---|
+|`-h, --help`|显示所有**pyinstaller**的**帮助**信息|
+|`-v, --version`|显示**pyinstaller版本号**|
+|`--distpath DIR`|<details><summary>打包生成的文件路径</summary><p>默认：当前路径下的**dist**文件夹内</p></details>|
+|`--workpath WORKPATH`|<details><summary>打包过程中生成的临时文件路径</summary><p>默认：当前目录下的**build**文件内</p></details>|
+|`-y, --noconfirm`|<details><summary>如果dist文件夹内已经存在生成文件，则**不询问**用户，直接覆盖</summary><p>默认：**询问**用户是否覆盖</P></details>|
+|`--upx-dir UPX_DIR`|<details><summary>Path to UPX utility</summary><p>默认：search the **execution** path</p></details>|
+|`-a, --ascii`|<details><summary>**不包含unicode**编码支持</summary><P>默认：**included** if available</p></details>|
+|`--clean`|<details><summary>在本次编译之前，**清空上次**生成的各种文件</summary><p>默认：**不清除**</P></details>|
+|`--log-level LEVEL`|<details><summary>编译时控制台信息中的详细信息</summary><p>LEVEL may be one of **TRACE**, **DEBUG**, **INFO**, **WARN**, **DEPRECATION**, **ERROR**, **FATAL** (default: INFO).<br> Also **settable via** and overrides the **PYI_LOG_LEVEL** environment variable.</p></details>|
 ##### What To Generate
-|参数|作用|说明|
-|:---|:---|:---|
-|-D, --onedir|生成包含一个可执行文件的one-folder(默认)|生成结果是一个目录，各种第三方依赖、资源和exe同时存储在该目录|
-|-F, --onefile|生成只有可执行文件的one-file|生成结果是一个exe文件，所有的第三方依赖、资源和代码均被打包进该exe内，程序执行缓慢|
-|--specpath DIR|指定spec文件的存储目录|默认:当前目录|
-|-n NAME, --name NAME|生成的.exe文件和.spec的文件名|默认:和脚本同名|
-|-n NAME, --name NAME|要分配给打包应用程序和spec文件的名称|默认:first script’s basename|
+|参数|作用|
+|:---|:---|
+|`-D, --onedir`|<details><summary>生成包含一个可执行文件的**one-folder**(default)</summary><p>生成结果是一个**目录**，各种第三方依赖、资源和.exe**同时**存储在该目录</p></details>|
+|`-F, --onefile`|<details><summary>生成只有可执行文件的**one-file**</summary><p>生成结果是一个.**exe**文件，所有的第三方依赖、资源和代码均被打包进该.exe内，程序执行**缓慢**</p></details>|
+|`--specpath DIR`|<details><summary>指定.**spec**文件的存储目录</summary><p>默认：当前目录</p></details>|
+|`-n NAME, --name NAME`|<details><summary>要分配给打包.**exe**和.**spec**文件的名称</summary><p>默认：**first script’s basename**</p></details>|
 ##### What To Bundle, Where To Search
-|参数|作用|说明|
-|:---|:---|:---|
-|--add-data <SRC;DEST or SRC:DEST>|打包其他非二进制资源,例如:图片|用法：pyinstaller /path/yourscript.py --add-data=src;dest。windows以;分割，linux以:分割|
-|--add-binary <SRC;DEST or SRC:DEST>|打包额外的代码|用法:同–add-data。与–add-data不同的是，用binary添加的文件，pyi会分析它引用的文件并把它们一同添加进来|
-|-p DIR, --paths DIR|A path to search for imports (like using PYTHONPATH).|允许多个路径，中间用':'隔开，等价于向spec文件提供pathex参数|
-|--hidden-import MODULENAME, --hiddenimport MODULENAME|Name an import not visible in the code of the script(s). |用于打包时有些引入的MODULENAME没有找到，可多次使用|
-|--collect-submodules MODULENAME|收集指定的包或模块内所有的子模块|可多次使用|
-|--collect-data MODULENAME, --collect-datas MODULENAME|收集指定的包或模块中的所有数据文件|可多次使用|
-|--collect-binaries MODULENAME|收集指定的包或模块内所有的二进制文件|可多次使用|
-|--collect-all MODULENAME|收集指定的包或模块中所有的子模块、数据文件和二进制文件|可多次使用|
-|--copy-metadata PACKAGENAME|复制指定包的元数据|可多次使用|
-|--recursive-copy-metadata PACKAGENAME|复制指定包及其所有依赖项的元数据|可多次使用|
-|--additional-hooks-dir HOOKSPATH|An additional path to search for hooks.|可多次使用|
-|--runtime-hook RUNTIME_HOOKS|Path to a custom runtime hook file. |如果设置了此参数，则runtime-hook会在运行main.py之前被运行|
-|--exclude-module EXCLUDES|Optional module or package (the Python name, not the path name) that will be ignored (as though it was not found). |打包时忽略用不到的依赖库，减少文件大小|
-|--splash IMAGE_FILE|(EXPERIMENTAL) Add an splash screen with the image IMAGE_FILE to the application.|The splash screen can display progress updates while unpacking.|
+|参数|作用|
+|:---|:---|
+|`--add-data <SRC;DEST or SRC:DEST>`|<details><summary>打包**非二进制**资源,例如:图片</summary><p>用法：`pyinstaller /path/yourscript.py --add-data=src;dest`。**windows以;分割，linux以:分割**</p></details>|
+|`--add-binary <SRC;DEST or SRC:DEST>`|<details><summary>打包**非二进制**资源</summary><p>用法:**同**`–add-data`。与`–add-data`不同的是，用binary添加的文件，pyi会分析它引用的文件并把它们**一同添加**进来</p></details>|
+|`-p DIR, --paths DIR`|<details><summary>A path to search for **imports (like using PYTHONPATH)**.</summary><p>允许多个路径，中间用'**:**'隔开，等价于向.**spec**文件提供**pathex**参数</p></details>|
+|`--hidden-import MODULENAME`,<br> `--hiddenimport MODULENAME`|<details><summary>Name an import **not visible** in the code of the script(s).</summary><p>用于打包时有些引入的**MODULENAME没有找到**，可多次使用</P></details>|
+|`--collect-submodules MODULENAME`|<details><summary>收集指定的包或模块内所有的**子模块**</summary><p>可多次使用</p></details>|
+|`--collect-data MODULENAME`,<br>` --collect-datas MODULENAME`|<details><summary>收集指定的包或模块中的所有**数据文件**</summary><p>可多次使用</p></details>|
+|`--collect-binaries MODULENAME`|<details><summary>收集指定的包或模块内所有的**二进制文件**</summary><p>可多次使用</p></details>|
+|`--collect-all MODULENAME`|<details><summary>收集指定的包或模块中所有的**子模块、数据文件和二进制文件**</summary><p>可多次使用</p></details>|
+|`--copy-metadata PACKAGENAME`|<details><summary>复制指定包的**元数据**</summary><p>可多次使用</p></details>|
+|`--recursive-copy-metadata PACKAGENAME`|<details><summary>复制指定包及其所有**依赖项的元数据**</summary><p>可多次使用</p></details>|
+|`--additional-hooks-dir HOOKSPATH`|<details><summary>An additional path to search for **hooks**.</summary><p>可多次使用</p></details>|
+|`--runtime-hook RUNTIME_HOOKS`|<details><summary>Path to a **custom runtime** hook file.</summary><p>如果设置了此参数，则runtime-hook会在运行main.py**之前**被运行</p></details>|
+|`--exclude-module EXCLUDES`|<details><summary>Optional module or package (the Python name, not the path name)<br> that will be **ignored** (as though it was not found).</summary><p>打包时忽略用不到的依赖库，减少文件大小</p></details>|
+|`--splash IMAGE_FILE`|<details><summary>(EXPERIMENTAL) Add an splash screen with the image IMAGE_FILE to the application.</summary><p>The splash screen can display progress updates while unpacking.</p></details>|
 ##### How To Generate
-|参数|作用|说明|
-|:---|:---|:---|
-|-d {all,imports,bootloader,noarchive},<br> --debug {all,imports,bootloader,noarchive}|应用程序执行时，输出log，有助于排查错误|默认:不输出log|
-|--python-option PYTHON_OPTION|运行时指定一个命令行选项传给python解释器|Currently supports “v” (equivalent to “–debug imports”), “u”, and “W <warning control>”.|
-|-s, --strip|Apply a symbol-table strip to the executable and shared libs|不建议在Windows系统使用|
-|--noupx|即使UPX可用，也不要使用|works differently between Windows and *nix|
-|--upx-exclude FILE|使用upx时，防止二进制文件被压缩。|用于UPX压缩时，损坏了某些二进制文件。FILE是没有路径的二进制文件的文件名，该参数可多次使用|
+|参数|作用|
+|:---|:---|
+|`-d {all,imports,bootloader,noarchive}`,<br> `--debug {all,imports,bootloader,noarchive}`|<details><summary>应用程序执行时，输出log，有助于排查错误</summary><p>默认:不输出log</p></details>|
+|`--python-option PYTHON_OPTION`|<details><summary>运行时指定一个命令行选项传给python解释器</summary><p>Currently supports “v” (equivalent to “–debug imports”), “u”, and “W <warning control>”.</p></details>|
+|`-s, --strip`|<details><summary>Apply a symbol-table strip to the executable and shared libs</summary><p>不建议在Windows系统使用</p></details>|
+|`--noupx`|<details><summary>禁止使用UPX</summary><p>works differently between Windows and *nix</p></details>|
+|`--upx-exclude FILE`|<details><summary>使用upx时，**防止二进制文件被压缩**。</summary><p>用于UPX压缩时，损坏了某些二进制文件。**FILE**是没有路径的**二进制文件**的文件名，该参数可多次使用</p></details>|
 ##### Windows And Mac Os X Specific Options
-|参数|作用|说明|
-|:---|:---|:---|
-|-c, --console, --nowindowed|可执行文件工作时显示控制台窗口(默认)|On Windows this option has no effect if the first script is a ‘.pyw’ file.|
-|-w, --windowed, --noconsole|Windows and Mac OS X:可执行文件工作时不显示控制台窗口|On Mac OS this also triggers building a Mac OS .app bundle.<br> On Windows this option is automatically set if the first script is a ‘.pyw’ file.<br> This option is ignored on *NIX systems.|
-|-i <FILE.ico or FILE.exe,ID or FILE.icns or Image or "NONE">,<br> --icon <FILE.ico or FILE.exe,ID or FILE.icns or Image or "NONE">|给可执行文件添加图片|FILE.ico: apply the icon to a Windows executable.<br> FILE.exe,ID: extract the icon with ID from an exe.<br> FILE.icns: apply the icon to the .app bundle on Mac OS. <br>如果输入的图像文件不是平台格式（Windows上为ico，Mac上为icns），PyInstaller会尝试使用Pillow将图标转换为正确的格式。|
-|--disable-windowed-traceback|Disable traceback dump of unhandled exception in windowed (noconsole) mode (Windows and macOS only), and instead display a message that this feature is disabled.|无|
-> 如果需要安装Pillow，pip install Pillow，安装完成后，输入pip show Pillow，若显示版本信息，则安装成功，如下图：<br>
+|参数|作用|
+|:---|:---|
+|`-c, --console, --nowindowed`|<details><summary>可执行文件工作时**显示**控制台窗口(默认)</summary><p>On Windows this option has no effect if the first script is a ‘.pyw’ file.</p></details>|
+|`-w, --windowed, --noconsole`|<details><summary>Windows and Mac OS X:可执行文件工作时**不显示**控制台窗口</summary><p>On Mac OS this also triggers building a Mac OS .app bundle.<br> On Windows this option is automatically set if the first script is a ‘.pyw’ file.<br> This option is ignored on *NIX systems.</p></details>|
+|`-i <FILE.ico or FILE.exe,ID or FILE.icns or Image or "NONE">`,<br> `--icon <FILE.ico or FILE.exe,ID or FILE.icns or Image or "NONE">`|<details><summary>给可执行文件**添加图片**</summary><p>FILE.ico: apply the icon to a Windows executable.<br> FILE.exe,ID: extract the icon with ID from an exe.<br> FILE.icns: apply the icon to the .app bundle on Mac OS. <br>如果输入的图像文件不是平台格式（Windows上为ico，Mac上为icns），PyInstaller会尝试使用[Pillow](#安装Pillow)将图标转换为正确的格式。</p></details>|
+|`--disable-windowed-traceback`|Disable traceback dump of unhandled exception in windowed (noconsole) mode (Windows and macOS only), and instead display a message that this feature is disabled.|
+> - 安装Pillow(图像处理)，`pip install Pillow`，安装完成后，输入`pip show Pillow`，若显示版本信息，则安装成功，如下图：<br>
 > ![20](https://github.com/wangrui11111/pyinstaller/assets/142973887/afb25126-d257-4294-9396-5ea8c689c8d5)
 ##### Windows Specific Options
-|参数|作用|说明|
-|:---|:---|:---|
-|--version-file FILE|添加版本信息文件|用法:pyinstaller --version-file version_file_info.txt|
-|--no-embed-manifest|生成一个额外的.exe.manifest文件|仅适用于onedir模式，在onefile模式中，有没有设置这个参数，manifest都是内嵌在.exe中的|
-|-r RESOURCE,<br> --resource RESOURCE|向Windows可执行文件添加或更新资源。|The RESOURCE is one to four items, FILE[,TYPE[,NAME[,LANGUAGE]]].<br>FILE可以是一个数据文件或exe/dll文件<br>对于数据文件，至少TYPE和NAME必须被指定，LANGUAGE默认0或也许被指定为wildcard *，更新给定的TYPE和NAME的所有资源<br>对于exe/dll文件，如果TYPE, NAME 和 LANGUAGE被忽略或者被指定为wildcard *，所有资源文件将被添加/更新到最终的可执行文件|
-|--uac-admin|创建一个Manifest，该Manifest将在应用程序启动时请求提升。|无|
-|--uac-uiaccess|允许升级应用程序与远程桌面一起工作。|无|
+|参数|作用|
+|:---|:---|
+|`--version-file FILE`|<details><summary>添加**版本信息**文件</summary><p>用法:`pyinstaller --version-file version_file_info.txt`</p></details>|
+|`--no-embed-manifest`|<details><summary>生成一个**额外**的.**exe**.**manifest**文件</summary><p>**仅适用于onedir**模式，在onefile模式中，有没有设置这个参数，manifest都是内嵌在.exe中的|
+|`-r RESOURCE, --resource RESOURCE`|<details><summary>向**Windows**可执行文件**添加或更新**资源。</summary><p>The RESOURCE is **one to four items**, **FILE[,TYPE[,NAME[,LANGUAGE]]]**.<br>**FILE**可以是一个**数据文件**或.**exe/dll文件**<br>对于数据文件，**至少TYPE**和**NAME**必须被指定，LANGUAGE默认0或也许被指定为wildcard *，更新给定的TYPE和NAME的所有资源<br>对于exe/dll文件，如果TYPE, NAME 和 LANGUAGE被忽略或者被指定为wildcard *，所有资源文件将被添加/更新到最终的可执行文件</p></details>|
+|`--uac-admin`|创建一个Manifest，该Manifest将在应用程序启动时请求提升。
+|`--uac-uiaccess`|允许升级应用程序与远程桌面一起工作。
 ##### Windows Side-By-Side Assembly Searching Options
-|参数|作用|说明|
-|:---|:---|:---|
-|--win-private-assemblies|Any Shared Assemblies bundled into the application will be changed into Private Assemblies.|This means the exact versions of these assemblies will always be used, and any newer versions installed on user machines at the system level will be ignored.|
-|--win-no-prefer-redirects|While searching for Shared or Private Assemblies to bundle into the application, PyInstaller will prefer not to follow policies that redirect to newer versions, and will try to bundle the exact versions of the assembly.|无|
+|参数|作用|
+|:---|:---|
+|`--win-private-assemblies`|<details><summary>Any Shared Assemblies bundled into the application will be changed into Private Assemblies.</summary><p>This means the exact versions of these assemblies will always be used, and any newer versions installed on user machines at the system level will be ignored.</p></details>|
+|`--win-no-prefer-redirects`|While searching for Shared or Private Assemblies to bundle into the application, PyInstaller will <br>prefer not to follow policies that redirect to newer versions, and will try to bundle the exact <br>versions of the assembly.|
 ##### Mac Os Specific Options
-|参数|作用|说明|
-|:---|:---|:---|
-|--argv-emulation|Enable argv emulation for macOS app bundles. |If enabled, the initial open document/URL event is processed by the bootloader and the passed file paths or URLs are appended to sys.argv.|
-|--osx-bundle-identifier BUNDLE_IDENTIFIER|Mac OS .app bundle identifier is used as the default unique program name for code signing purposes.|The usual form is a hierarchical name in reverse DNS notation.<br>For example: com.mycompany.department.appname (default: first script’s basename)|
-|--target-architecture ARCH, --target-arch ARCH|Target architecture (macOS only; valid values: x86_64, arm64, universal2).|Enables switching between universal2 and single-arch version of frozen application (provided python installation supports the target architecture).<br> If not target architecture is not specified, the current running architecture is targeted.|
-|--codesign-identity IDENTITY|Code signing identity (macOS only). |Use the provided identity to sign collected binaries and generated executable. <br>If signing identity is not provided, ad- hoc signing is performed instead.|
-|--osx-entitlements-file FILENAME|Entitlements file to use when code-signing the collected binaries (macOS only).|无|
+|参数|作用|
+|:---|:---|
+|`--argv-emulation`|<details><summary>Enable argv emulation for macOS app bundles.</summary><p>If enabled, the initial open document/URL event is processed by the bootloader and the passed file paths or URLs are appended to sys.argv.</p></details>|
+|`--osx-bundle-identifier BUNDLE_IDENTIFIER`|<details><summary>Mac OS .app bundle identifier is used as the default unique program name for code signing purposes.</summary><p>The usual form is a hierarchical name in reverse DNS notation.<br>For example: com.mycompany.department.appname (default: first script’s basename)</p></details>|
+|`--target-architecture ARCH, --target-arch ARCH`|<details><summary>Target architecture (macOS only; valid values: x86_64, arm64, universal2).</summary><p>Enables switching between universal2 and single-arch version of frozen application (provided python installation supports the target architecture).<br> If not target architecture is not specified, the current running architecture is targeted.</p></details>|
+|`--codesign-identity IDENTITY`|<details><summary>Code signing identity (macOS only).</summary><p>Use the provided identity to sign collected binaries and generated executable. <br>If signing identity is not provided, ad- hoc signing is performed instead.</p></details>|
+|`--osx-entitlements-file FILENAME`|Entitlements file to use when code-signing the collected binaries (macOS only).
 ##### Rarely Used Special Options
-|参数|作用|说明|
-|:---|:---|:---|
-|--runtime-tmpdir PATH|Where to extract libraries and support files in onefile-mode.|If this option is given, the bootloader will ignore any temp-folder location defined by the run-time OS.<br> The _MEIxxxxxx-folder will be created here. Please use this option only if you know what you are doing.|
-|--bootloader-ignore-signals|Tell the bootloader to ignore signals rather than forwarding them to the child process. |Useful in situations where for example a supervisor process signals both the bootloader and the child (e.g., via a process group) to avoid signalling the child twice.|
+|参数|作用|
+|:---|:---|
+|`--runtime-tmpdir PATH`|<details><summary>Where to extract libraries and support files in onefile-mode.</summary><p>If this option is given, the bootloader will ignore any temp-folder location defined by the run-time OS.<br> The _MEIxxxxxx-folder will be created here. Please use this option only if you know what you are doing.</p></details>|
+|--bootloader-ignore-signals|<details><summary>Tell the bootloader to ignore signals rather than forwarding them to the child process.</summary><p>Useful in situations where for example a supervisor process signals both the bootloader and the child (e.g., via a process group) to avoid signalling the child twice.</p></details>|
 #### Add Version Resource To executables
 + Capturing Windows Version Data
 ```
