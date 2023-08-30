@@ -22,11 +22,11 @@ Pyinstaller是一种将python程序打包成独立可执行的工具。Inno Setu
     pip install pyinstaller
     pyinstaller -v
 执行pyinstaller -v，若结果显示pyinstaller版本号，则安装成功，如下图所示：<br>
-![Inno Setup 1](https://github.com/wangrui11111/pyinstaller/blob/main/images/19.PNG)<br>
+![19](https://github.com/wangrui11111/pyinstaller/assets/142973887/adbf2498-a3cd-4d06-b6c2-b3d603022198)
 ### Inno Setup Installation
 Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
-![Inno Setup 1](https://github.com/wangrui11111/pyinstaller/blob/main/images/1.png)<br>
-![Inno Setup 2](https://github.com/wangrui11111/pyinstaller/blob/main/images/2.png)
+![1](https://github.com/wangrui11111/pyinstaller/assets/142973887/95ea14e7-ac6b-4c91-930f-55129a2f9539)<br>
+![2](https://github.com/wangrui11111/pyinstaller/assets/142973887/774ada6e-8341-4ff8-8aae-32137e83b9b7)
 ## Getting Started
 ### Packaging
     pyinstaller /path/yourscript.py
@@ -91,7 +91,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 |-i <FILE.ico or FILE.exe,ID or FILE.icns or Image or "NONE">,<br> --icon <FILE.ico or FILE.exe,ID or FILE.icns or Image or "NONE">|给可执行文件添加图片|FILE.ico: apply the icon to a Windows executable.<br> FILE.exe,ID: extract the icon with ID from an exe.<br> FILE.icns: apply the icon to the .app bundle on Mac OS. <br>如果输入的图像文件不是平台格式（Windows上为ico，Mac上为icns），PyInstaller会尝试使用Pillow将图标转换为正确的格式。|
 |--disable-windowed-traceback|Disable traceback dump of unhandled exception in windowed (noconsole) mode (Windows and macOS only), and instead display a message that this feature is disabled.|无|
 > 如果需要安装Pillow，pip install Pillow，安装完成后，输入pip show Pillow，若显示版本信息，则安装成功，如下图：<br>
-> ![Inno Setup 20](https://github.com/wangrui11111/pyinstaller/blob/main/images/20.PNG)
+> ![20](https://github.com/wangrui11111/pyinstaller/assets/142973887/afb25126-d257-4294-9396-5ea8c689c8d5)
 ##### Windows Specific Options
 |参数|作用|说明|
 |:---|:---|:---|
@@ -162,32 +162,31 @@ VarFileInfo([VarStruct('Translation', [0x0804, 1200])])  语言信息 0x0804：�
     > pyinstaller /path/yourscript.spec 将版本文本文件转为版本资源打包到可执行文件
 ### 安装包制作
 - 打开Inno Setup后，选择创建一个脚本，并使用导向制作，如下图所示：<br>
-![Inno Setup 3](https://github.com/wangrui11111/pyinstaller/blob/main/images/3.png)
+![3](https://github.com/wangrui11111/pyinstaller/assets/142973887/a803512d-fd03-4be8-9e57-5c653bcc2151)
 - 下一步<br>
-![Inno Setup 4](https://github.com/wangrui11111/pyinstaller/blob/main/images/4.png)
+![4](https://github.com/wangrui11111/pyinstaller/assets/142973887/461aa1f4-9b1a-41ff-8bc4-595548c4867a)
 - 根据实际情况，填写以下相关信息，应用程序名称（必填）、应用程序版本（必填）、应用程序发布者、应用程序网站，如下图所示：<br>
-![Inno Setup 5](https://github.com/wangrui11111/pyinstaller/blob/main/images/5.png)
+![5](https://github.com/wangrui11111/pyinstaller/assets/142973887/b632bdd2-9788-4b46-8b51-4fbfa6f05b29)
 - 配置应用程序安装路径相关信息，如下图所示：<br>
-![Inno Setup 6](https://github.com/wangrui11111/pyinstaller/blob/main/images/6.png)
+![6](https://github.com/wangrui11111/pyinstaller/assets/142973887/60593934-2ab1-4310-92be-ae4ba35a3d93)
 - 添加应用程序及其运行所需要的依赖文件：<br>
-![Inno Setup 7](https://github.com/wangrui11111/pyinstaller/blob/main/images/7.png)
+![7](https://github.com/wangrui11111/pyinstaller/assets/142973887/6ef0968a-9235-4ffd-89a2-1569206787f6)
 - 填写关联到应用程序的文件类型名，如下图所示：<br>
-![Inno Setup 8](https://github.com/wangrui11111/pyinstaller/blob/main/images/8.png)
+![8](https://github.com/wangrui11111/pyinstaller/assets/142973887/d8f1b7d2-9b13-4805-bc41-6119f260fa5f)
 - 创建快捷方式：<br>
-![Inno Setup 9](https://github.com/wangrui11111/pyinstaller/blob/main/images/9.png)
+![9](https://github.com/wangrui11111/pyinstaller/assets/142973887/1445d1f9-9f78-43cd-9ab3-6a4f08b12eda)
 - 添加安装过程中显示的信息文件：<br>
-![Inno Setup 10](https://github.com/wangrui11111/pyinstaller/blob/main/images/10.png)
+![10](https://github.com/wangrui11111/pyinstaller/assets/142973887/29eb70fb-84e9-46c9-81b2-f984fc2cded7)
 - 配置安装模式：<br>
-![Inno Setup 11](https://github.com/wangrui11111/pyinstaller/blob/main/images/11.png)
+![11](https://github.com/wangrui11111/pyinstaller/assets/142973887/d01753ca-f1a5-478a-a3bd-b88d38453eda)
 - 配置安装语言：<br>
-![Inno Setup 12](https://github.com/wangrui11111/pyinstaller/blob/main/images/12.png)
+![12](https://github.com/wangrui11111/pyinstaller/assets/142973887/67a1b1ec-1c26-4a16-b089-5e83185b10fd)
 - 配置安装包信息：<br>
-![Inno Setup 13](https://github.com/wangrui11111/pyinstaller/blob/main/images/13.png)
+![13](https://github.com/wangrui11111/pyinstaller/assets/142973887/48af923a-1986-4e71-81c5-84c59a3b11bc)
 - 下一步：<br>
-![Inno Setup 14](https://github.com/wangrui11111/pyinstaller/blob/main/images/14.png)
+![14](https://github.com/wangrui11111/pyinstaller/assets/142973887/096df849-a0bd-4b64-8695-5b0096f80295)
 - Finish：<br>
-![Inno Setup 15](https://github.com/wangrui11111/pyinstaller/blob/main/images/15.png)<br>
-![Inno Setup 16](https://github.com/wangrui11111/pyinstaller/blob/main/images/16.png)<br>
-![Inno Setup 17](https://github.com/wangrui11111/pyinstaller/blob/main/images/17.png)<br>
-![Inno Setup 18](https://github.com/wangrui11111/pyinstaller/blob/main/images/18.png)
-
+![15](https://github.com/wangrui11111/pyinstaller/assets/142973887/a26b13a8-7ca9-4760-8bc1-ed240c02208d)<br>
+![16](https://github.com/wangrui11111/pyinstaller/assets/142973887/206499a0-1a54-4bdc-a9b1-7233264b0ac9)<br>
+![17](https://github.com/wangrui11111/pyinstaller/assets/142973887/a0a9a334-fc0d-4c4d-9520-d2749835ad43)<br>
+![18](https://github.com/wangrui11111/pyinstaller/assets/142973887/2d31f741-f924-4dd7-99bb-55b0580362df)
