@@ -35,9 +35,9 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 > spec文件可以打开后直接修改，也可以通过pyinstaller的参数进行修改，如pyi-makespec -w /path/yourscript.py/。修改完成后，将修改的配置打包到可执行文件pyinstaller /path/yourscript.spec。
 #### Pyinstaller Arguments
 ##### Position Arguments
-|参数|作用|
-|:---|:---|
-|scriptname|Name of scriptfiles to be processed or exactly one .spec file. If a .spec file is specified, most options are unnecessary and are ignored.|
+|<div style="width:590px">property</div>|作用|
+|:--------------------------------------|:---|
+|scriptname                             |Name of scriptfiles to be processed or exactly one .spec file. If a .spec file is specified, most options are unnecessary and are ignored.|
 ##### Optional Arguments
 |参数|作用|说明|
 |:---|:---|:---|
