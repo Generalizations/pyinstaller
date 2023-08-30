@@ -190,3 +190,4 @@ VarFileInfo([VarStruct('Translation', [0x0804, 1200])])  语言信息 0x0804：�
 ![Inno Setup 16](https://github.com/wangrui11111/pyinstaller/blob/main/images/16.png)<br>
 ![Inno Setup 17](https://github.com/wangrui11111/pyinstaller/blob/main/images/17.png)<br>
 ![Inno Setup 18](https://github.com/wangrui11111/pyinstaller/blob/main/images/18.png)
+
