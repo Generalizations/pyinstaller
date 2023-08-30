@@ -117,7 +117,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 |参数|作用|
 |:---|:---|
 |`--runtime-tmpdir PATH`|<details><summary>Where to extract libraries and support files in onefile-mode.</summary><p>If this option is given, the bootloader will ignore any temp-folder location defined by the run-time OS.<br> The _MEIxxxxxx-folder will be created here. Please use this option only if you know what you are doing.</p></details>|
-|--bootloader-ignore-signals|<details><summary>Tell the bootloader to ignore signals rather than forwarding them to the child process.</summary><p>Useful in situations where for example a supervisor process signals both the bootloader and the child (e.g., via a process group) to avoid signalling the child twice.</p></details>|
+|`--bootloader-ignore-signals`|<details><summary>Tell the bootloader to ignore signals rather than forwarding them to the child process.</summary><p>Useful in situations where for example a supervisor process signals both the bootloader and the child (e.g., via a process group) to avoid signalling the child twice.</p></details>|
 #### Add Version Resource To executables
 + Capturing Windows Version Data
 ```
