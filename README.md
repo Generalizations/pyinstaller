@@ -89,7 +89,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 |:---|:---|
 |`-c, --console, --nowindowed`|<details><summary>可执行文件工作时**显示**控制台窗口(默认)</summary><p>On Windows this option has no effect if the first script is a ‘.pyw’ file.</p></details>|
 |`-w, --windowed, --noconsole`|<details><summary>Windows and Mac OS X:可执行文件工作时**不显示**控制台窗口</summary><p>On Mac OS this also triggers building a Mac OS .app bundle.<br> On Windows this option is automatically set if the first script is a ‘.pyw’ file.<br> This option is ignored on *NIX systems.</p></details>|
-|`-i <FILE.ico or FILE.exe,ID or FILE.icns or Image or "NONE">`,<br> `--icon <FILE.ico or FILE.exe,ID or FILE.icns or Image or "NONE">`|<details><summary>给可执行文件**添加图片**</summary><p>FILE.ico: apply the icon to a Windows executable.<br> FILE.exe,ID: extract the icon with ID from an exe.<br> FILE.icns: apply the icon to the .app bundle on Mac OS. <br>如果输入的图像文件不是平台格式（Windows上为ico，Mac上为icns），PyInstaller会尝试使用[Pillow](#安装Pillow)将图标转换为正确的格式。</p></details>|
+|`-i <FILE.ico or FILE.exe,ID or FILE.icns or Image or "NONE">`,<br> `--icon <FILE.ico or FILE.exe,ID or FILE.icns or Image or "NONE">`|<details><summary>给可执行文件**添加图片**</summary><p>FILE.ico: apply the icon to a Windows executable.<br> FILE.exe,ID: extract the icon with ID from an exe.<br> FILE.icns: apply the icon to the .app bundle on Mac OS. <br>如果输入的图像文件不是平台格式（**Windows格式为ico，Mac格式为icns**），PyInstaller会尝试使用[Pillow](#安装Pillow)将图标转换为正确的格式。</p></details>|
 |`--disable-windowed-traceback`|Disable traceback dump of unhandled exception in windowed (noconsole) mode (Windows and macOS only), and instead display a message that this feature is disabled.|
 > [!IMPORTANT]
 > - 安装Pillow(图像处理)，`pip install Pillow`，安装完成后，输入`pip show Pillow`，若显示版本信息，则安装成功，如下图：<br>
