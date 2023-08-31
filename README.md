@@ -58,7 +58,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 |`-D, --onedir`|<details><summary>生成包含一个可执行文件的**one-folder**(default)</summary><p>生成结果是一个**目录**，各种第三方依赖、资源和.exe**同时**存储在该目录</p></details>|
 |`-F, --onefile`|<details><summary>生成只有可执行文件的**one-file**</summary><p>生成结果是一个.**exe**文件，所有的第三方依赖、资源和代码均被打包进该.exe内，程序执行**缓慢**</p></details>|
 |`--specpath DIR`|<details><summary>指定.**spec**文件的存储目录</summary><p>默认：当前目录</p></details>|
-|`-n NAME, --name NAME`|<details><summary>要分配给打包.**exe**和.**spec**文件的名称</summary><p>默认：**first script’s basename**</p></details>|
+|`-n NAME, --name NAME`|<details><summary>要分配给打包生成的.**exe**和.**spec**文件的名称</summary><p>默认：**first script’s basename**</p></details>|
 ##### What To Bundle, Where To Search
 |参数|作用|
 |:---|:---|
@@ -128,7 +128,7 @@ pyi-grab_version executable_with_version_resource.exe
 + Editing The Version Information To Adapt It To Your Program<br>
 filevers(1,2,3,4)<br>
 prodvers(1,2,3,4)<br>
-filevers(文件版本)和prodvers(产品版本)需要4个元素，分别是主版本号、次版本号、修订版本号、编译版本号,根据实际情况修改
+filevers(文件版本)和prodvers(产品版本)需要**4**个元素，分别是**主版本号**、**次版本号**、**修订版本号**、**编译版本号**,根据实际情况修改
 ````
 ```
 kids=[
@@ -175,7 +175,7 @@ kids=[
 ![4](https://github.com/wangrui11111/pyinstaller/assets/142973887/461aa1f4-9b1a-41ff-8bc4-595548c4867a)
 
 
-- 根据实际情况，填写以下相关信息，应用程序名称（必填）、应用程序版本（必填）、应用程序发布者、应用程序网站，如下图所示：<br>
+- 根据实际情况，填写以下相关信息，**应用程序名称（必填）**、**应用程序版本（必填）**、应用程序发布者、应用程序网站，如下图所示：<br>
 ![5](https://github.com/wangrui11111/pyinstaller/assets/142973887/b632bdd2-9788-4b46-8b51-4fbfa6f05b29)
 
 
