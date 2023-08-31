@@ -36,10 +36,14 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 - **build**文件夹：用来存放打包时的**临时**文件等。 打包完成后，build文件可直接**删除**，不影响可执行程序。
 - .**spec**文件：是可执行文件的相关**配置**文件。此文件可以打开后直接修改，也可以通过**pyinstaller**的**参数**进行修改，如`pyi-makespec -w /path/yourscript.py`。修改完成后，将修改的配置打包到可执行文件`pyinstaller /path/yourscript.spec`。
 #### Pyinstaller Arguments
-##### Position Arguments
+<details>
+<summary>Position Arguments</summary>
+    
 |参数|作用|
 |:---|:---|
-|`scriptname`|<details><summary>**Name of scriptfiles** to be processed or exactly **one .spec file**.</summary> <p>If a .spec file is specified, most options are unnecessary and are ignored.</p></details>|
+|`scriptname`|<details><summary>**Name of scriptfiles** to be processed or exactly **one .spec file**.</summary> <p>If a .spec file is specified, most options are unnecessary and are ignored.</p></details>|   
+</details>
+
 ##### Optional Arguments
 |参数|作用|
 |:---|:---|
