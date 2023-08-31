@@ -220,6 +220,7 @@ kids=[
     ```
     pyi-set_version version_text_file executable_file
     ```
+    ---
     > [!NOTE]
     > `pyi-set_version`：读取由`pyi-grab_version`编写的版本文本文件，将其转换为版本资源，并将该资源打包到指定的executable_file中。
     + 方式二
@@ -227,6 +228,7 @@ kids=[
     pyi-makespec --version-file=version_text_file /path/yourscript.py 
     pyinstaller /path/yourscript.spec
     ```
+    ---
     > [!NOTE]
     > `pyi-makespec --version-file` 将版本文本文件写入配置文件<br>
     > `pyinstaller /path/yourscript.spec` 将版本文本文件转为版本资源打包到可执行文件
