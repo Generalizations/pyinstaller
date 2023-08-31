@@ -37,7 +37,6 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 - .**spec**文件：是可执行文件的相关**配置**文件。此文件可以打开后直接修改，也可以通过**pyinstaller**的**参数**进行修改，如`pyi-makespec -w /path/yourscript.py`。修改完成后，将修改的配置打包到可执行文件`pyinstaller /path/yourscript.spec`。
 #### Pyinstaller Arguments
 <details>
-
 <summary> 
    
 ##### Position Arguments 
@@ -47,8 +46,12 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 |:---|:---|
 |`scriptname`|<details><summary>**Name of scriptfiles** to be processed or exactly **one .spec file**.</summary> <p>If a .spec file is specified, most options are unnecessary and are ignored.</p></details>|   
 </details>
-
+<details>
+<summary>
+       
 ##### Optional Arguments
+</summary>
+
 |参数|作用|
 |:---|:---|
 |`-h, --help`|显示所有**pyinstaller**的**帮助**信息|
@@ -60,14 +63,26 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 |`-a, --ascii`|<details><summary>**不包含unicode**编码支持</summary><P>默认：**included** if available</p></details>|
 |`--clean`|<details><summary>在本次编译之前，**清空上次**生成的各种文件</summary><p>默认：**不清除**</P></details>|
 |`--log-level LEVEL`|<details><summary>编译时控制台信息中的详细信息</summary><p>LEVEL may be one of **TRACE**, **DEBUG**, **INFO**, **WARN**, **DEPRECATION**, **ERROR**, **FATAL** (default: INFO).<br> Also **settable via** and overrides the **PYI_LOG_LEVEL** environment variable.</p></details>|
+</details>
+<details> 
+<summary>
+        
 ##### What To Generate
+</summary>
+    
 |参数|作用|
 |:---|:---|
 |`-D, --onedir`|<details><summary>生成包含一个可执行文件的**one-folder**(default)</summary><p>生成结果是一个**目录**，各种第三方依赖、资源和.exe**同时**存储在该目录</p></details>|
 |`-F, --onefile`|<details><summary>生成只有可执行文件的**one-file**</summary><p>生成结果是一个.**exe**文件，所有的第三方依赖、资源和代码均被打包进该.exe内，程序执行**缓慢**</p></details>|
 |`--specpath DIR`|<details><summary>指定.**spec**文件的存储目录</summary><p>默认：当前目录</p></details>|
 |`-n NAME, --name NAME`|<details><summary>要分配给打包生成的.**exe**和.**spec**文件的名称</summary><p>默认：**first script’s basename**</p></details>|
+</details>
+<details>
+<summary>
+    
 ##### What To Bundle, Where To Search
+</summary>
+
 |参数|作用|
 |:---|:---|
 |`--add-data <SRC;DEST or SRC:DEST>`|<details><summary>打包**非二进制**资源,例如:图片</summary><p>用法：`pyinstaller /path/yourscript.py --add-data=src;dest`。**windows以;分割，linux以:分割**</p></details>|
@@ -84,7 +99,13 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 |`--runtime-hook RUNTIME_HOOKS`|<details><summary>Path to a **custom runtime** hook file.</summary><p>如果设置了此参数，则runtime-hook会在运行main.py**之前**被运行</p></details>|
 |`--exclude-module EXCLUDES`|<details><summary>Optional module or package (the Python name, not the path name)<br> that will be **ignored** (as though it was not found).</summary><p>打包时忽略用不到的依赖库，减少文件大小</p></details>|
 |`--splash IMAGE_FILE`|<details><summary>(EXPERIMENTAL) Add an splash screen with the image IMAGE_FILE to the application.</summary><p>The splash screen can display progress updates while unpacking.</p></details>|
+</details>
+<details>
+<summary>
+    
 ##### How To Generate
+</summary>
+
 |参数|作用|
 |:---|:---|
 |`-d {all,imports,bootloader,noarchive}`,<br> `--debug {all,imports,bootloader,noarchive}`|<details><summary>应用程序执行时，输出log，有助于排查错误</summary><p>默认:不输出log</p></details>|
@@ -92,7 +113,13 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 |`-s, --strip`|<details><summary>Apply a symbol-table strip to the executable and shared libs</summary><p>不建议在Windows系统使用</p></details>|
 |`--noupx`|<details><summary>禁止使用UPX</summary><p>works differently between Windows and *nix</p></details>|
 |`--upx-exclude FILE`|<details><summary>使用upx时，**防止二进制文件被压缩**。</summary><p>用于UPX压缩时，损坏了某些二进制文件。**FILE**是没有路径的**二进制文件**的文件名，该参数可多次使用</p></details>|
+</details>
+<details>
+<summary>
+    
 ##### Windows And Mac Os X Specific Options
+</summary>
+
 |参数|作用|
 |:---|:---|
 |`-c, --console, --nowindowed`|<details><summary>可执行文件工作时**显示**控制台窗口(默认)</summary><p>On Windows this option has no effect if the first script is a ‘.pyw’ file.</p></details>|
@@ -102,7 +129,13 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 > [!IMPORTANT]
 > - 给启动程序添加图标时，如果输入的图像文件不是平台格式，PyInstaller会尝试使用Pillow将图标转换为正确的格式。`pip install Pillow`，安装完成后，输入`pip show Pillow`，若显示版本信息，则安装成功，如下图：<br>
 > ![20](https://github.com/wangrui11111/pyinstaller/assets/142973887/afb25126-d257-4294-9396-5ea8c689c8d5)
+</details>
+<details>
+<summary>
+    
 ##### Windows Specific Options
+</summary>
+
 |参数|作用|
 |:---|:---|
 |`--version-file FILE`|<details><summary>添加**版本信息**文件</summary><p>用法:`pyinstaller --version-file version_file_info.txt`</p></details>|
@@ -110,12 +143,24 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 |`-r RESOURCE, --resource RESOURCE`|<details><summary>向**Windows**可执行文件**添加或更新**资源。</summary><p>The RESOURCE is **one to four items**, **FILE[,TYPE[,NAME[,LANGUAGE]]]**.<br>**FILE**可以是一个**数据文件**或.**exe/dll文件**<br>对于数据文件，**至少TYPE**和**NAME**必须被指定，LANGUAGE默认0或也许被指定为wildcard *，更新给定的TYPE和NAME的所有资源<br>对于exe/dll文件，如果TYPE, NAME 和 LANGUAGE被忽略或者被指定为wildcard *，所有资源文件将被添加/更新到最终的可执行文件</p></details>|
 |`--uac-admin`|创建一个Manifest，该Manifest将在应用程序启动时请求提升。
 |`--uac-uiaccess`|允许升级应用程序与远程桌面一起工作。
+</details>
+<details>
+<summary>
+    
 ##### Windows Side-By-Side Assembly Searching Options
+</summary>
+
 |参数|作用|
 |:---|:---|
 |`--win-private-assemblies`|<details><summary>Any Shared Assemblies bundled into the application will be **changed into Private** Assemblies.</summary><p>This means the exact versions of these assemblies will always be used, and any newer versions installed on user machines at the system level will be ignored.</p></details>|
 |`--win-no-prefer-redirects`|While searching for Shared or Private Assemblies to bundle into the application, PyInstaller will <br>prefer not to follow policies that redirect to newer versions, and will try to **bundle the exact <br>versions** of the assembly.|
+</details>
+<details>
+<summary>
+    
 ##### Mac Os Specific Options
+</summary>
+
 |参数|作用|
 |:---|:---|
 |`--argv-emulation`|<details><summary>Enable argv emulation for macOS app bundles.</summary><p>If enabled, the initial open document/URL event is processed by the bootloader and the passed file paths or URLs are appended to sys.argv.</p></details>|
@@ -123,11 +168,19 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 |`--target-architecture ARCH, --target-arch ARCH`|<details><summary>Target architecture (macOS only; valid values: x86_64, arm64, universal2).</summary><p>Enables switching between universal2 and single-arch version of frozen application (provided python installation supports the target architecture).<br> If not target architecture is not specified, the current running architecture is targeted.</p></details>|
 |`--codesign-identity IDENTITY`|<details><summary>Code signing identity (macOS only).</summary><p>Use the provided identity to sign collected binaries and generated executable. <br>If signing identity is not provided, ad- hoc signing is performed instead.</p></details>|
 |`--osx-entitlements-file FILENAME`|Entitlements file to use when code-signing the collected binaries (macOS only).
+</details>
+<details>
+<summary>
+        
 ##### Rarely Used Special Options
+</summary>
+
 |参数|作用|
 |:---|:---|
 |`--runtime-tmpdir PATH`|<details><summary>Where to extract libraries and support files in **onefile-mode**.</summary><p>If this option is given, the bootloader will ignore any temp-folder location defined by the run-time OS.<br> The _MEIxxxxxx-folder will be created here. Please use this option only if you know what you are doing.</p></details>|
 |`--bootloader-ignore-signals`|<details><summary>Tell the bootloader to ignore signals rather than forwarding them to the child process.</summary><p>Useful in situations where for example a supervisor process signals both the bootloader and the child (e.g., via a process group) to avoid signalling the child twice.</p></details>|
+</details>
+    
 #### Add Version Resource To executables
 + Capturing Windows Version Data
 ```
