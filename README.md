@@ -126,8 +126,6 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 |`-w, --windowed, --noconsole`|<details><summary>Windows and Mac OS X:可执行文件工作时**不显示**控制台窗口</summary><p>On Mac OS this also triggers building a Mac OS .app bundle.<br> On Windows this option is automatically set if the first script is a ‘.pyw’ file.<br> This option is ignored on *NIX systems.</p></details>|
 |`-i <FILE.ico or FILE.exe,ID or FILE.icns or Image or "NONE">`,<br> `--icon <FILE.ico or FILE.exe,ID or FILE.icns or Image or "NONE">`|<details><summary>给可执行文件**添加图标**，(**Windows格式为ico，Mac格式为icns**)</summary><p>FILE.ico: apply the icon to a Windows executable.<br> FILE.exe,ID: extract the icon with ID from an exe.<br> FILE.icns: apply the icon to the .app bundle on Mac OS. </p></details>|
 |`--disable-windowed-traceback`|Disable traceback dump of unhandled exception in windowed (noconsole) mode (Windows and macOS only), and instead display a message that this feature is disabled.|
-
----
 > [!IMPORTANT]
 > - 给启动程序添加图标时，如果输入的图像文件不是平台格式，PyInstaller会尝试使用Pillow将图标转换为正确的格式。`pip install Pillow`，安装完成后，输入`pip show Pillow`，若显示版本信息，则安装成功，如下图：<br>
 > ![20](https://github.com/wangrui11111/pyinstaller/assets/142973887/afb25126-d257-4294-9396-5ea8c689c8d5)
@@ -220,7 +218,6 @@ kids=[
     ```
     pyi-set_version version_text_file executable_file
     ```
-    ---
     > [!NOTE]
     > `pyi-set_version`：读取由`pyi-grab_version`编写的版本文本文件，将其转换为版本资源，并将该资源打包到指定的executable_file中。
     + 方式二
@@ -228,7 +225,6 @@ kids=[
     pyi-makespec --version-file=version_text_file /path/yourscript.py 
     pyinstaller /path/yourscript.spec
     ```
-    ---
     > [!NOTE]
     > `pyi-makespec --version-file` 将版本文本文件写入配置文件<br>
     > `pyinstaller /path/yourscript.spec` 将版本文本文件转为版本资源打包到可执行文件
