@@ -162,7 +162,6 @@ filevers(1,2,3,4)<br>
 prodvers(1,2,3,4)<br>
 filevers(文件版本)和prodvers(产品版本)需要**4**个元素，分别是**主版本号**、**次版本号**、**修订版本号**、**编译版本号**,根据实际情况修改
 ````
-
 ```c++
 kids=[
     StringFileInfo(
@@ -183,7 +182,6 @@ kids=[
     VarFileInfo([VarStruct('Translation', [0x0804, 1200])])  语言信息 0x0804：中文简体,1200：中国 可根据需求修改
    ]
 ```
-
 ````
 + Add version_file to executables
     + 方式一 
