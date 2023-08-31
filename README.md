@@ -21,10 +21,10 @@ Pyinstaller是一种将python程序打包成独立可执行的工具。Inno Setu
 ### Pyinstaller Installation
     pip install pyinstaller
     pyinstaller -v
-执行`pyinstaller -v`，若结果显示pyinstaller版本号，则安装成功，如下图所示：<br>
+执行`pyinstaller -v`，若结果显示pyinstaller版本号，则安装成功，如下图所示：<br><br>
 ![19](https://github.com/wangrui11111/pyinstaller/assets/142973887/adbf2498-a3cd-4d06-b6c2-b3d603022198)
 ### Inno Setup Installation
-Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
+Inno Setup官网: https://jrsoftware.org/isinfo.php <br><br>
 ![1](https://github.com/wangrui11111/pyinstaller/assets/142973887/95ea14e7-ac6b-4c91-930f-55129a2f9539)<br>
 
 ![2](https://github.com/wangrui11111/pyinstaller/assets/142973887/774ada6e-8341-4ff8-8aae-32137e83b9b7)
@@ -181,6 +181,7 @@ kids=[
     ]),
     VarFileInfo([VarStruct('Translation', [0x0804, 1200])])  语言信息 0x0804：中文简体,1200：中国 可根据需求修改
    ]
+
 ```
 ````
 + Add version_file to executables
