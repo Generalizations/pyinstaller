@@ -21,11 +21,12 @@ Pyinstaller是一种将python程序打包成独立可执行的工具。Inno Setu
 ### Pyinstaller Installation
     pip install pyinstaller
     pyinstaller -v
-执行pyinstaller -v，若结果显示pyinstaller版本号，则安装成功，如下图所示：<br>
+执行`pyinstaller -v`，若结果显示pyinstaller版本号，则安装成功，如下图所示：<br>
 ![19](https://github.com/wangrui11111/pyinstaller/assets/142973887/adbf2498-a3cd-4d06-b6c2-b3d603022198)
 ### Inno Setup Installation
 Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 ![1](https://github.com/wangrui11111/pyinstaller/assets/142973887/95ea14e7-ac6b-4c91-930f-55129a2f9539)<br>
+
 ![2](https://github.com/wangrui11111/pyinstaller/assets/142973887/774ada6e-8341-4ff8-8aae-32137e83b9b7)
 ## Getting Started
 ### Packaging
@@ -38,7 +39,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 ##### Position Arguments
 |参数|作用|
 |:---|:---|
-|scriptname|<details><summary>**Name of scriptfiles** to be processed or exactly **one .spec file**.</summary> <p>If a .spec file is specified, most options are unnecessary and are ignored.</p></details>|
+|`scriptname`|<details><summary>**Name of scriptfiles** to be processed or exactly **one .spec file**.</summary> <p>If a .spec file is specified, most options are unnecessary and are ignored.</p></details>|
 ##### Optional Arguments
 |参数|作用|
 |:---|:---|
@@ -103,20 +104,20 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 ##### Windows Side-By-Side Assembly Searching Options
 |参数|作用|
 |:---|:---|
-|`--win-private-assemblies`|<details><summary>Any Shared Assemblies bundled into the application will be changed into Private Assemblies.</summary><p>This means the exact versions of these assemblies will always be used, and any newer versions installed on user machines at the system level will be ignored.</p></details>|
-|`--win-no-prefer-redirects`|While searching for Shared or Private Assemblies to bundle into the application, PyInstaller will <br>prefer not to follow policies that redirect to newer versions, and will try to bundle the exact <br>versions of the assembly.|
+|`--win-private-assemblies`|<details><summary>Any Shared Assemblies bundled into the application will be **changed into Private** Assemblies.</summary><p>This means the exact versions of these assemblies will always be used, and any newer versions installed on user machines at the system level will be ignored.</p></details>|
+|`--win-no-prefer-redirects`|While searching for Shared or Private Assemblies to bundle into the application, PyInstaller will <br>prefer not to follow policies that redirect to newer versions, and will try to **bundle the exact <br>versions** of the assembly.|
 ##### Mac Os Specific Options
 |参数|作用|
 |:---|:---|
 |`--argv-emulation`|<details><summary>Enable argv emulation for macOS app bundles.</summary><p>If enabled, the initial open document/URL event is processed by the bootloader and the passed file paths or URLs are appended to sys.argv.</p></details>|
-|`--osx-bundle-identifier BUNDLE_IDENTIFIER`|<details><summary>Mac OS .app bundle identifier is used as the default unique program name for code signing purposes.</summary><p>The usual form is a hierarchical name in reverse DNS notation.<br>For example: com.mycompany.department.appname (default: first script’s basename)</p></details>|
+|`--osx-bundle-identifier BUNDLE_IDENTIFIER`|<details><summary>Mac OS .app bundle identifier is used as the default **unique** program name for code signing purposes.</summary><p>The usual form is a hierarchical name in reverse DNS notation.<br>For example: com.mycompany.department.appname (default: first script’s basename)</p></details>|
 |`--target-architecture ARCH, --target-arch ARCH`|<details><summary>Target architecture (macOS only; valid values: x86_64, arm64, universal2).</summary><p>Enables switching between universal2 and single-arch version of frozen application (provided python installation supports the target architecture).<br> If not target architecture is not specified, the current running architecture is targeted.</p></details>|
 |`--codesign-identity IDENTITY`|<details><summary>Code signing identity (macOS only).</summary><p>Use the provided identity to sign collected binaries and generated executable. <br>If signing identity is not provided, ad- hoc signing is performed instead.</p></details>|
 |`--osx-entitlements-file FILENAME`|Entitlements file to use when code-signing the collected binaries (macOS only).
 ##### Rarely Used Special Options
 |参数|作用|
 |:---|:---|
-|`--runtime-tmpdir PATH`|<details><summary>Where to extract libraries and support files in onefile-mode.</summary><p>If this option is given, the bootloader will ignore any temp-folder location defined by the run-time OS.<br> The _MEIxxxxxx-folder will be created here. Please use this option only if you know what you are doing.</p></details>|
+|`--runtime-tmpdir PATH`|<details><summary>Where to extract libraries and support files in **onefile-mode**.</summary><p>If this option is given, the bootloader will ignore any temp-folder location defined by the run-time OS.<br> The _MEIxxxxxx-folder will be created here. Please use this option only if you know what you are doing.</p></details>|
 |`--bootloader-ignore-signals`|<details><summary>Tell the bootloader to ignore signals rather than forwarding them to the child process.</summary><p>Useful in situations where for example a supervisor process signals both the bootloader and the child (e.g., via a process group) to avoid signalling the child twice.</p></details>|
 #### Add Version Resource To executables
 + Capturing Windows Version Data
@@ -128,63 +129,92 @@ pyi-grab_version executable_with_version_resource.exe
 filevers(1,2,3,4)<br>
 prodvers(1,2,3,4)<br>
 filevers(文件版本)和prodvers(产品版本)需要4个元素，分别是主版本号、次版本号、修订版本号、编译版本号,根据实际情况修改
+````
 ```
-StringTable——包含启动程序要显示的版本信息
-StringFileInfo(
-[
- StringTable(
-    '',   语言信息 如：080404B0表示中文
-    [StringStruct('CompanyName', ''),  开发产品公司名称
-    StringStruct('FileDescription', ''), 文件说明
-    StringStruct('FileVersion', ''), 文件版本
-    StringStruct('InternalName', ''), 内部名称
-    StringStruct('LegalCopyright', ''), 版权
-    StringStruct('OriginalFilename', ''), 源文件名
-    StringStruct('ProductName', ''),  产品名称
-    StringStruct('Comments', ''),  备注
-    StringStruct('LegalTrademarks', ''), 文件的所有注册商标信息
-    StringStruct('ProductVersion', '1.0.0.0')])  产品版本
-]),
-VarFileInfo([VarStruct('Translation', [0x0804, 1200])])  语言信息 0x0804：中文简体,1200：中国
+kids=[
+    StringFileInfo(
+    [
+     StringTable(
+        '',   语言信息 如：080404B0表示中文
+        [StringStruct('CompanyName', ''),  开发产品公司名称
+        StringStruct('FileDescription', ''), 文件说明
+        StringStruct('FileVersion', ''), 文件版本
+        StringStruct('InternalName', ''), 内部名称
+        StringStruct('LegalCopyright', ''), 版权
+        StringStruct('OriginalFilename', ''), 源文件名
+        StringStruct('ProductName', ''),  产品名称
+        StringStruct('Comments', ''),  备注
+        StringStruct('LegalTrademarks', ''), 文件的所有注册商标信息
+        StringStruct('ProductVersion', '')])  产品版本
+    ]),
+    VarFileInfo([VarStruct('Translation', [0x0804, 1200])])  语言信息 0x0804：中文简体,1200：中国 可根据需求修改
+   ]
 ```
+````
+
+
 + Add version_file to executables
     + 方式一 
     ```
     pyi-set_version version_text_file executable_file
     ```
-    > pyi-set_version：读取由pyi-grab_version编写的版本文本文件，将其转换为版本资源，并将该资源打包到指定的executable_file中。
+    > `pyi-set_version`：读取由`pyi-grab_version`编写的版本文本文件，将其转换为版本资源，并将该资源打包到指定的executable_file中。
     + 方式二
     ```
     pyi-makespec --version-file=version_text_file /path/yourscript.py 
     pyinstaller /path/yourscript.spec
     ```
-    > pyi-makespec --version-file 将版本文本文件写入配置文件<br>
-    > pyinstaller /path/yourscript.spec 将版本文本文件转为版本资源打包到可执行文件
+    > `pyi-makespec --version-file` 将版本文本文件写入配置文件<br>
+    > `pyinstaller /path/yourscript.spec` 将版本文本文件转为版本资源打包到可执行文件
 ### 安装包制作
 - 打开Inno Setup后，选择创建一个脚本，并使用导向制作，如下图所示：<br>
 ![3](https://github.com/wangrui11111/pyinstaller/assets/142973887/a803512d-fd03-4be8-9e57-5c653bcc2151)
+
+
 - 下一步<br>
 ![4](https://github.com/wangrui11111/pyinstaller/assets/142973887/461aa1f4-9b1a-41ff-8bc4-595548c4867a)
+
+
 - 根据实际情况，填写以下相关信息，应用程序名称（必填）、应用程序版本（必填）、应用程序发布者、应用程序网站，如下图所示：<br>
 ![5](https://github.com/wangrui11111/pyinstaller/assets/142973887/b632bdd2-9788-4b46-8b51-4fbfa6f05b29)
+
+
 - 配置应用程序安装路径相关信息，如下图所示：<br>
 ![6](https://github.com/wangrui11111/pyinstaller/assets/142973887/60593934-2ab1-4310-92be-ae4ba35a3d93)
+
+
 - 添加应用程序及其运行所需要的依赖文件：<br>
 ![7](https://github.com/wangrui11111/pyinstaller/assets/142973887/6ef0968a-9235-4ffd-89a2-1569206787f6)
+
+
 - 填写关联到应用程序的文件类型名，如下图所示：<br>
 ![8](https://github.com/wangrui11111/pyinstaller/assets/142973887/d8f1b7d2-9b13-4805-bc41-6119f260fa5f)
+
+
 - 创建快捷方式：<br>
 ![9](https://github.com/wangrui11111/pyinstaller/assets/142973887/1445d1f9-9f78-43cd-9ab3-6a4f08b12eda)
+
+
 - 添加安装过程中显示的信息文件：<br>
 ![10](https://github.com/wangrui11111/pyinstaller/assets/142973887/29eb70fb-84e9-46c9-81b2-f984fc2cded7)
+
+
 - 配置安装模式：<br>
 ![11](https://github.com/wangrui11111/pyinstaller/assets/142973887/d01753ca-f1a5-478a-a3bd-b88d38453eda)
+
+
 - 配置安装语言：<br>
 ![12](https://github.com/wangrui11111/pyinstaller/assets/142973887/67a1b1ec-1c26-4a16-b089-5e83185b10fd)
+
+
 - 配置安装包信息：<br>
 ![13](https://github.com/wangrui11111/pyinstaller/assets/142973887/48af923a-1986-4e71-81c5-84c59a3b11bc)
+
+
 - 下一步：<br>
 ![14](https://github.com/wangrui11111/pyinstaller/assets/142973887/096df849-a0bd-4b64-8695-5b0096f80295)
+
+
 - Finish：<br>
 ![15](https://github.com/wangrui11111/pyinstaller/assets/142973887/a26b13a8-7ca9-4760-8bc1-ed240c02208d)<br>
 ![16](https://github.com/wangrui11111/pyinstaller/assets/142973887/206499a0-1a54-4bdc-a9b1-7233264b0ac9)<br>
