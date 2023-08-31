@@ -69,7 +69,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 |`-n NAME, --name NAME`|<details><summary>要分配给打包生成的.**exe**和.**spec**文件的名称</summary><p>默认：**first script’s basename**</p></details>|
 </details>
 <details>
-<summary><h5>What To Bundle, Where To Search</h5></summary>
+    <summary><h5>What To Bundle, Where To Search</h5></summary>
 
 |参数|作用|
 |:---|:---|
@@ -89,7 +89,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 |`--splash IMAGE_FILE`|<details><summary>(EXPERIMENTAL) Add an splash screen with the image IMAGE_FILE to the application.</summary><p>The splash screen can display progress updates while unpacking.</p></details>|
 </details>
 <details>
-<summary><h5>How To Generate</h5></summary>
+    <summary><h5>How To Generate</h5></summary>
 
 |参数|作用|
 |:---|:---|
@@ -100,7 +100,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 |`--upx-exclude FILE`|<details><summary>使用upx时，**防止二进制文件被压缩**。</summary><p>用于UPX压缩时，损坏了某些二进制文件。**FILE**是没有路径的**二进制文件**的文件名，该参数可多次使用</p></details>|
 </details>
 <details>
-<summary><h5>Windows And Mac Os X Specific Options</h5></summary>
+    <summary><h5>Windows And Mac Os X Specific Options</h5></summary>
 
 |参数|作用|
 |:---|:---|
@@ -113,7 +113,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 > ![20](https://github.com/wangrui11111/pyinstaller/assets/142973887/afb25126-d257-4294-9396-5ea8c689c8d5)
 </details>
 <details>
-<summary><h5>Windows Specific Options</h5></summary>
+    <summary><h5>Windows Specific Options</h5></summary>
 
 |参数|作用|
 |:---|:---|
@@ -124,7 +124,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 |`--uac-uiaccess`|允许升级应用程序与远程桌面一起工作。
 </details>
 <details>
-<summary><h5>Windows Side-By-Side Assembly Searching Options</h5></summary>
+    <summary><h5>Windows Side-By-Side Assembly Searching Options</h5></summary>
 
 |参数|作用|
 |:---|:---|
@@ -132,7 +132,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 |`--win-no-prefer-redirects`|While searching for Shared or Private Assemblies to bundle into the application, PyInstaller will <br>prefer not to follow policies that redirect to newer versions, and will try to **bundle the exact <br>versions** of the assembly.|
 </details>
 <details>
-<summary><h5>Mac Os Specific Options</h5></summary>
+    <summary><h5>Mac Os Specific Options</h5></summary>
 
 |参数|作用|
 |:---|:---|
@@ -143,7 +143,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br>
 |`--osx-entitlements-file FILENAME`|Entitlements file to use when code-signing the collected binaries (macOS only).
 </details>
 <details>
-<summary><h5>Rarely Used Special Options</h5></summary>
+    <summary><h5>Rarely Used Special Options</h5></summary>
 
 |参数|作用|
 |:---|:---|
