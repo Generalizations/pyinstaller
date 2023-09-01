@@ -110,7 +110,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br><br>
 |:---|:---|
 |`--version-file FILE`|<details><summary>添加**版本信息**文件</summary><p>用法:`pyinstaller --version-file version_file_info.txt`</p></details>|
 |`--no-embed-manifest`|<details><summary>生成一个**额外**的.**exe**.**manifest**文件</summary><p>**仅适用于onedir**模式，在onefile模式中，有没有设置这个参数，manifest都是内嵌在.exe中的|
-|`-r RESOURCE, --resource RESOURCE`|<details><summary>向**Windows**可执行文件**添加或更新**资源。</summary><p>The RESOURCE is **one to four items**, **FILE[,TYPE[,NAME[,LANGUAGE]]]**.<br>**FILE**可以是一个**数据文件**或.**exe/dll文件**<br>对于数据文件，**至少TYPE**和**NAME**必须被指定，LANGUAGE默认0或也许被指定为wildcard *，更新给定的TYPE和NAME的所有资源<br>对于exe/dll文件，如果TYPE, NAME 和 LANGUAGE被忽略或者被指定为wildcard *，所有资源文件将被添加/更新到最终的可执行文件</p></details>|
+|`-r RESOURCE, --resource RESOURCE`|<details><summary>向**Windows**可执行文件**添加或更新**资源。</summary><p>The RESOURCE is **one to four items**, **FILE[,TYPE[,NAME[,LANGUAGE]]]**.<br>**FILE**可以是一个**数据文件**或.**exe/dll文件**。<br>对于数据文件，**至少TYPE**和**NAME**必须被指定，LANGUAGE默认0或也许被指定为wildcard *，更新给定的TYPE和NAME的所有资源。<br>对于exe/dll文件，如果TYPE, NAME 和 LANGUAGE被忽略或者被指定为wildcard *，所有资源文件将被添加/更新到最终的可执行文件。</p></details>|
 |`--uac-admin`|创建一个Manifest，该Manifest将在应用程序启动时请求提升。
 |`--uac-uiaccess`|允许升级应用程序与远程桌面一起工作。
 </details>
