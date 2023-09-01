@@ -16,7 +16,7 @@ Pyinstaller是一种将python程序打包成独立可执行的工具。Inno Setu
             - [Mac Os Specific Options](#Mac-Os-Specific-Options)
             - [Rarely Used Special Options](#Rarely-Used-Special-Options)
         - [添加版本资源](#Add-Version-Resource-To-executables)
-    - [安装包制作](#安装包制作)
+    - [Inno Setup制作安装包](#Inno Setup制作安装包)
 ## Installation
 ### Pyinstaller Installation
     pip install pyinstaller
@@ -199,57 +199,84 @@ kids=[
     > [!NOTE]
     > `pyi-makespec --version-file` 将版本文本文件写入配置文件<br>
     > `pyinstaller /path/yourscript.spec` 将版本文本文件转为版本资源打包到可执行文件
-### 安装包制作
-- 打开Inno Setup后，选择创建一个脚本，并使用导向制作，如下图所示：<br><br>
+### Inno Setup制作安装包
+<details>
+<summary>打开Inno Setup后，选择创建一个脚本，并使用导向制作</summary>
+
 ![3](https://github.com/wangrui11111/pyinstaller/assets/142973887/a803512d-fd03-4be8-9e57-5c653bcc2151)
+</details>
+<details>
+<summary>点击下一步</summary>
 
-
-- 下一步<br><br>
 ![4](https://github.com/wangrui11111/pyinstaller/assets/142973887/461aa1f4-9b1a-41ff-8bc4-595548c4867a)
-
-
-- 根据实际情况，填写以下相关信息，**应用程序名称（必填）**、**应用程序版本（必填）**、应用程序发布者、应用程序网站，如下图所示：<br><br>
+</details>
+<details>
+<summary>根据实际情况，填写以下相关信息，<strong>应用程序名称（必填）</strong>、<strong>应用程序版本（必填）</strong>、应用程序发布者、应用程序网站</summary>
+    
 ![5](https://github.com/wangrui11111/pyinstaller/assets/142973887/b632bdd2-9788-4b46-8b51-4fbfa6f05b29)
-
-
-- 配置应用程序安装路径相关信息，如下图所示：<br><br>
+</details>
+<details>
+<summary> 配置应用程序安装路径相关信息</summary>
+    
 ![6](https://github.com/wangrui11111/pyinstaller/assets/142973887/60593934-2ab1-4310-92be-ae4ba35a3d93)
-
-
-- 添加应用程序及其运行所需要的依赖文件：<br><br>
+</details>
+<details>
+<summary>添加应用程序及其运行所需要的依赖文件</summary>
+    
 ![7](https://github.com/wangrui11111/pyinstaller/assets/142973887/6ef0968a-9235-4ffd-89a2-1569206787f6)
-
-
-- 填写关联到应用程序的文件类型名，如下图所示：<br><br>
+</details>
+<details>
+<summary> 填写关联到应用程序的文件类型名，如下图所示</summary>
+    
 ![8](https://github.com/wangrui11111/pyinstaller/assets/142973887/d8f1b7d2-9b13-4805-bc41-6119f260fa5f)
-
-
-- 创建快捷方式：<br><br>
+</details>
+<details>
+<summary>创建快捷方式</summary>
+    
 ![9](https://github.com/wangrui11111/pyinstaller/assets/142973887/1445d1f9-9f78-43cd-9ab3-6a4f08b12eda)
-
-
-- 添加安装过程中显示的信息文件：<br><br>
+</details>
+<details>
+<summary>添加安装过程中显示的信息文件</summary>
+    
 ![10](https://github.com/wangrui11111/pyinstaller/assets/142973887/29eb70fb-84e9-46c9-81b2-f984fc2cded7)
-
-
-- 配置安装模式：<br><br>
+</details>
+<details>
+<summary>配置安装模式</summary>
+    
 ![11](https://github.com/wangrui11111/pyinstaller/assets/142973887/d01753ca-f1a5-478a-a3bd-b88d38453eda)
-
-
-- 配置安装语言：<br><br>
+</details>
+<details>
+<summary>配置安装语言</summary>
+    
 ![12](https://github.com/wangrui11111/pyinstaller/assets/142973887/67a1b1ec-1c26-4a16-b089-5e83185b10fd)
-
-
-- 配置安装包信息：<br><br>
+</details>
+<details>
+<summary>配置安装包信息</summary>
+    
 ![13](https://github.com/wangrui11111/pyinstaller/assets/142973887/48af923a-1986-4e71-81c5-84c59a3b11bc)
-
-
-- 下一步：<br><br>
+</details>
+<details>
+<summary>点击下一步</summary>
+    
 ![14](https://github.com/wangrui11111/pyinstaller/assets/142973887/096df849-a0bd-4b64-8695-5b0096f80295)
-
-
-- Finish：<br><br>
+</details>
+<details>
+<summary>点击Finish</summary>
+    
 ![15](https://github.com/wangrui11111/pyinstaller/assets/142973887/a26b13a8-7ca9-4760-8bc1-ed240c02208d)<br>
-![16](https://github.com/wangrui11111/pyinstaller/assets/142973887/206499a0-1a54-4bdc-a9b1-7233264b0ac9)<br>
-![17](https://github.com/wangrui11111/pyinstaller/assets/142973887/a0a9a334-fc0d-4c4d-9520-d2749835ad43)<br>
+</details>
+<details>
+<summary>确认现在编译一个新的脚本</summary>
+
+![16](https://github.com/wangrui11111/pyinstaller/assets/142973887/206499a0-1a54-4bdc-a9b1-7233264b0ac9)
+</details>
+<details>
+
+    
+![17](https://github.com/wangrui11111/pyinstaller/assets/142973887/a0a9a334-fc0d-4c4d-9520-d2749835ad43)
+</details>
+<details>
+<summary>显示'Finish'，脚本编译成功，安装包制作完成</summary>
+    
 ![18](https://github.com/wangrui11111/pyinstaller/assets/142973887/2d31f741-f924-4dd7-99bb-55b0580362df)
+</details>
