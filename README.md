@@ -159,19 +159,19 @@ kids=[
     StringFileInfo(
     [
      StringTable(
-        '',   语言信息 如：080404B0表示中文
-        [StringStruct('CompanyName', ''),  开发产品公司名称
-        StringStruct('FileDescription', ''), 文件说明
-        StringStruct('FileVersion', ''), 文件版本
-        StringStruct('InternalName', ''), 内部名称
-        StringStruct('LegalCopyright', ''), 版权
-        StringStruct('OriginalFilename', ''), 源文件名
-        StringStruct('ProductName', ''),  产品名称
-        StringStruct('Comments', ''),  备注
-        StringStruct('LegalTrademarks', ''), 文件的所有注册商标信息
-        StringStruct('ProductVersion', '')])  产品版本
+        '',  // 语言信息 如：080404B0表示中文
+        [StringStruct('CompanyName', ''),  // 开发产品公司名称
+        StringStruct('FileDescription', ''),  // 文件说明
+        StringStruct('FileVersion', ''),  // 文件版本
+        StringStruct('InternalName', ''),  // 内部名称
+        StringStruct('LegalCopyright', ''),  // 版权
+        StringStruct('OriginalFilename', ''),  // 源文件名
+        StringStruct('ProductName', ''),  // 产品名称
+        StringStruct('Comments', ''),  // 备注
+        StringStruct('LegalTrademarks', ''),  // 文件的所有注册商标信息
+        StringStruct('ProductVersion', '')])  // 产品版本
     ]),
-    VarFileInfo([VarStruct('Translation', [0x0804, 1200])])  语言信息 0x0804：中文简体,1200：中国 可根据需求修改
+    VarFileInfo([VarStruct('Translation', [0x0804, 1200])])  // 语言信息 0x0804：中文简体,1200：中国 可根据需求修改
    ]
 
 ```
