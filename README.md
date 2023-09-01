@@ -152,7 +152,7 @@ pyi-grab_version executable_with_version_resource.exe
 + Editing The Version Information To Adapt It To Your Program<br>
 ````
 ```
-//  filevers(文件版本)和prodvers(产品版本)需要**4**个元素，分别是**主版本号**、**次版本号**、**修订版本号**、**编译版本号**,根据实际情况修改
+//  filevers(文件版本)和prodvers(产品版本)需要4个元素，分别是主版本号、次版本号、修订版本号、编译版本号,根据实际情况修改
 filevers(1,2,3,4)<br>
 prodvers(1,2,3,4)<br>
 kids=[
