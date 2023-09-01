@@ -101,7 +101,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br><br>
 |`-i <FILE.ico or FILE.exe,ID or FILE.icns or Image or "NONE">`,<br> `--icon <FILE.ico or FILE.exe,ID or FILE.icns or Image or "NONE">`|<details><summary>给可执行文件**添加图标**，(**Windows格式为ico，Mac格式为icns**)</summary><p>FILE.ico: apply the icon to a Windows executable.<br> FILE.exe,ID: extract the icon with ID from an exe.<br> FILE.icns: apply the icon to the .app bundle on Mac OS. </p></details>|
 |`--disable-windowed-traceback`|Disable traceback dump of unhandled exception in windowed (noconsole) mode (Windows and macOS only), and instead display a message that this feature is disabled.|
 > [!IMPORTANT]
-> 向启动程序添加图标时，如果输入的图像文件不是平台格式，PyInstaller会尝试使用Pillow将图标转换为正确的格式。Pillow安装指令——`pip install Pillow`，安装完成后，输入`pip show Pillow`，若显示版本信息，则安装成功，如下图：<br>
+> 向启动程序添加图标时，如果输入的图像文件不是平台格式，PyInstaller会尝试使用Pillow将图标转换为正确的格式。输入Pillow安装指令——`pip install Pillow`，安装完成后，输入`pip show Pillow`，若显示版本信息，则安装成功，如下图：<br>
 > ![20](https://github.com/wangrui11111/pyinstaller/assets/142973887/afb25126-d257-4294-9396-5ea8c689c8d5)
 </details>
 <details>
