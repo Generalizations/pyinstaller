@@ -1,3 +1,4 @@
+
 # Pyinstaller+Inno Setup Packaging
 Pyinstaller是一种将python程序打包成独立可执行的工具。Inno Setup是一种制作安装包的工具。<br>
 - [安装准备](#Installation)
@@ -6,15 +7,6 @@ Pyinstaller是一种将python程序打包成独立可执行的工具。Inno Setu
 - [Getting Started](#Getting-Started)
     - [Packaging](#Packaging)
         - [Pyinstaller Arguments](#Pyinstaller-Arguments)
-            - [Position Arguments](#Position-Arguments)
-            - [Optional Arguments](#Optional-Arguments)
-            - [What To Generate](#What-To-Generate)
-            - [What To Bundle, Where To Search](#What-To-Bundle-Where-To-Search)
-            - [How To Generate](#How-To-Generate)
-            - [Windows And Mac Os X Specific Options](#Windows-And-Mac-Os-X-Specific-Options)
-            - [Windows Side-By-Side Assembly Searching Options](#Windows-Side-By-Side-Assembly-Searching-Options)
-            - [Mac Os Specific Options](#Mac-Os-Specific-Options)
-            - [Rarely Used Special Options](#Rarely-Used-Special-Options)
         - [添加版本资源](#Add-Version-Resource-To-executables)
     - [Inno Setup制作安装包](#Inno-Setup制作安装包)
 ## Installation
@@ -37,14 +29,14 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br><br>
 - .**spec**文件：是可执行文件的相关**配置**文件。此文件可以打开后直接修改，也可以通过**pyinstaller**的**参数**进行修改，如`pyi-makespec -w /path/yourscript.py`。修改完成后，将修改的配置打包到可执行文件`pyinstaller /path/yourscript.spec`。
 #### Pyinstaller Arguments
 <details>
-    <summary><h5>Position Arguments</h5></summary>
+<summary>Position Arguments</summary>
     
 |参数|作用|
 |:---|:---|
 |`scriptname`|<details><summary>**Name of scriptfiles** to be processed or exactly **one .spec file**.</summary> <p>If a .spec file is specified, most options are unnecessary and are ignored.</p></details>|   
 </details>
 <details>
-    <summary><h5>Optional Arguments</h5></summary>
+<summary>Optional Arguments</summary>
      
 |参数|作用|
 |:---|:---|
@@ -59,7 +51,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br><br>
 |`--log-level LEVEL`|<details><summary>编译时控制台信息中的详细信息</summary><p>LEVEL may be one of **TRACE**, **DEBUG**, **INFO**, **WARN**, **DEPRECATION**, **ERROR**, **FATAL** (default: INFO).<br> Also **settable via** and overrides the **PYI_LOG_LEVEL** environment variable.</p></details>|
 </details>
 <details> 
-    <summary><h5>What To Generate</h5></summary>
+    <summary>What To Generate</summary>
     
 |参数|作用|
 |:---|:---|
@@ -69,7 +61,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br><br>
 |`-n NAME, --name NAME`|<details><summary>要分配给打包生成的.**exe**和.**spec**文件的名称</summary><p>默认：**first script’s basename**</p></details>|
 </details>
 <details>
-    <summary><h5>What To Bundle, Where To Search</h5></summary>
+    <summary>What To Bundle, Where To Search</summary>
 
 |参数|作用|
 |:---|:---|
@@ -89,7 +81,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br><br>
 |`--splash IMAGE_FILE`|<details><summary>(EXPERIMENTAL) Add an splash screen with the image IMAGE_FILE to the application.</summary><p>The splash screen can display progress updates while unpacking.</p></details>|
 </details>
 <details>
-    <summary><h5>How To Generate</h5></summary>
+    <summary>How To Generate</summary>
 
 |参数|作用|
 |:---|:---|
@@ -100,7 +92,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br><br>
 |`--upx-exclude FILE`|<details><summary>使用upx时，**防止二进制文件被压缩**。</summary><p>用于UPX压缩时，损坏了某些二进制文件。**FILE**是没有路径的**二进制文件**的文件名，该参数可多次使用</p></details>|
 </details>
 <details>
-    <summary><h5>Windows And Mac Os X Specific Options</h5></summary>
+    <summary>Windows And Mac Os X Specific Options</summary>
 
 |参数|作用|
 |:---|:---|
@@ -113,7 +105,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br><br>
 > ![20](https://github.com/wangrui11111/pyinstaller/assets/142973887/afb25126-d257-4294-9396-5ea8c689c8d5)
 </details>
 <details>
-    <summary><h5>Windows Specific Options</h5></summary>
+    <summary>Windows Specific Options</summary>
 
 |参数|作用|
 |:---|:---|
@@ -124,7 +116,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br><br>
 |`--uac-uiaccess`|允许升级应用程序与远程桌面一起工作。
 </details>
 <details>
-    <summary><h5>Windows Side-By-Side Assembly Searching Options</h5></summary>
+    <summary>Windows Side-By-Side Assembly Searching Options</summary>
 
 |参数|作用|
 |:---|:---|
@@ -132,7 +124,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br><br>
 |`--win-no-prefer-redirects`|While searching for Shared or Private Assemblies to bundle into the application, PyInstaller will <br>prefer not to follow policies that redirect to newer versions, and will try to **bundle the exact <br>versions** of the assembly.|
 </details>
 <details>
-    <summary><h5>Mac Os Specific Options</h5></summary>
+    <summary>Mac Os Specific Options</summary>
 
 |参数|作用|
 |:---|:---|
@@ -143,7 +135,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br><br>
 |`--osx-entitlements-file FILENAME`|Entitlements file to use when code-signing the collected binaries (macOS only).
 </details>
 <details>
-    <summary><h5>Rarely Used Special Options</h5></summary>
+    <summary>Rarely Used Special Options</summary>
 
 |参数|作用|
 |:---|:---|
