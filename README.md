@@ -23,7 +23,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br><br>
 ## Getting Started
 ### Packaging
     pyinstaller /path/yourscript.py
-- 生成**dist**文件、**build**文件、.**spec**文件。
+- 生成**dist**文件夹、**build**文件夹、.**spec**文件。
 - **dist**文件夹：包含**相关依赖**和**可执行文件**。
 - **build**文件夹：用来存放打包时的**临时**文件等。 打包完成后，build文件可直接**删除**，不影响可执行程序。
 - .**spec**文件：是可执行文件的相关**配置**文件。此文件可以打开后直接修改，也可以通过**pyinstaller**的**参数**进行修改，如`pyi-makespec -w /path/yourscript.py`。修改完成后，将修改的配置打包到可执行文件`pyinstaller /path/yourscript.spec`。
@@ -56,7 +56,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br><br>
 |参数|作用|
 |:---|:---|
 |`-D, --onedir`|<details><summary>生成包含一个可执行文件的**one-folder**(default)</summary><p>生成结果是一个**目录**，各种第三方依赖、资源和.exe**同时**存储在该目录</p></details>|
-|`-F, --onefile`|<details><summary>生成只有可执行文件的**one-file**</summary><p>生成结果是一个.**exe**文件，所有的第三方依赖、资源和代码均被打包进该.exe内，程序执行**缓慢**</p></details>|
+|`-F, --onefile`|<details><summary>生成**只有**可执行文件的**one-file**</summary><p>生成结果是一个.**exe**文件，所有的第三方依赖、资源和代码均被打包进该.exe内，程序执行**缓慢**</p></details>|
 |`--specpath DIR`|<details><summary>指定.**spec**文件的存储目录</summary><p>默认：当前目录</p></details>|
 |`-n NAME, --name NAME`|<details><summary>要分配给打包生成的.**exe**和.**spec**文件的名称</summary><p>默认：**first script’s basename**</p></details>|
 </details>
@@ -77,7 +77,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br><br>
 |`--recursive-copy-metadata PACKAGENAME`|<details><summary>复制指定包及其所有**依赖项的元数据**</summary><p>可多次使用</p></details>|
 |`--additional-hooks-dir HOOKSPATH`|<details><summary>An additional path to search for **hooks**.</summary><p>可多次使用</p></details>|
 |`--runtime-hook RUNTIME_HOOKS`|<details><summary>Path to a **custom runtime** hook file.</summary><p>如果设置了此参数，则runtime-hook会在运行main.py**之前**被运行</p></details>|
-|`--exclude-module EXCLUDES`|<details><summary>Optional module or package (the Python name, not the path name)<br> that will be **ignored** (as though it was not found).</summary><p>打包时忽略用不到的依赖库，减少文件大小</p></details>|
+|`--exclude-module EXCLUDES`|<details><summary>Optional module or package (the Python name, not the path name) that will be **ignored**<br> (as though it was not found).</summary><p>打包时忽略用不到的依赖库，减少文件大小</p></details>|
 |`--splash IMAGE_FILE`|<details><summary>(EXPERIMENTAL) Add an splash screen with the image IMAGE_FILE to the application.</summary><p>The splash screen can display progress updates while unpacking.</p></details>|
 </details>
 <details>
