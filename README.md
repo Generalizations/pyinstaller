@@ -150,11 +150,11 @@ pyi-grab_version executable_with_version_resource.exe
 ```
 在当前目录生成一个版本文本文件，内容为executable_with_version_resource.exe的版本信息
 + Editing The Version Information To Adapt It To Your Program<br>
-filevers(1,2,3,4)<br>
-prodvers(1,2,3,4)<br>
-filevers(文件版本)和prodvers(产品版本)需要**4**个元素，分别是**主版本号**、**次版本号**、**修订版本号**、**编译版本号**,根据实际情况修改
 ````
 ```
+//  filevers(文件版本)和prodvers(产品版本)需要**4**个元素，分别是**主版本号**、**次版本号**、**修订版本号**、**编译版本号**,根据实际情况修改
+filevers(1,2,3,4)<br>
+prodvers(1,2,3,4)<br>
 kids=[
     StringFileInfo(
     [
