@@ -271,12 +271,11 @@ kids=[
 ![16](https://github.com/wangrui11111/pyinstaller/assets/142973887/206499a0-1a54-4bdc-a9b1-7233264b0ac9)
 </details>
 <details>
-
+<summary>确认保存脚本</summary>   
     
 ![17](https://github.com/wangrui11111/pyinstaller/assets/142973887/a0a9a334-fc0d-4c4d-9520-d2749835ad43)
 </details>
-<details>
-<summary>显示'Finish'，脚本编译成功，安装包制作完成</summary>
+<details><summary>显示'Finish'，脚本编译成功，安装包制作完成</summary>
     
 ![18](https://github.com/wangrui11111/pyinstaller/assets/142973887/2d31f741-f924-4dd7-99bb-55b0580362df)
 </details>
