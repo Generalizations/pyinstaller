@@ -37,7 +37,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br><br>
 > - .**spec**文件：是可执行文件的相关**配置**文件。此文件可以打开后直接修改，也可以通过**pyinstaller**的**参数**进行修改，如`pyi-makespec -w /path/yourscript.py`。修改完成后，将修改的配置打包到可执行文件`pyinstaller /path/yourscript.spec`。
 #### Pyinstaller Arguments
 <details>
-<h5><summary>Position Arguments</summary></h5>
+<summary><h5>Position Arguments</h5></summary>
     
 |参数|作用|
 |:---|:---|
