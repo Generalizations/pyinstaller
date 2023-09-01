@@ -1,4 +1,3 @@
-
 # Pyinstaller+Inno Setup Packaging
 Pyinstaller是一种将python程序打包成独立可执行的工具。Inno Setup是一种制作安装包的工具。<br>
 - [Installation](#Installation)
@@ -77,7 +76,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br><br>
 |`--recursive-copy-metadata PACKAGENAME`|<details><summary>复制指定包及其所有**依赖项的元数据**</summary><p>可多次使用</p></details>|
 |`--additional-hooks-dir HOOKSPATH`|<details><summary>An additional path to search for **hooks**.</summary><p>可多次使用</p></details>|
 |`--runtime-hook RUNTIME_HOOKS`|<details><summary>Path to a **custom runtime** hook file.</summary><p>如果设置了此参数，则runtime-hook会在运行main.py**之前**被运行</p></details>|
-|`--exclude-module EXCLUDES`|<details><summary>Optional module or package (the Python name, not the path name) that will be **ignored**<br> (as though it was not found).</summary><p>打包时忽略用不到的依赖库，减少文件大小</p></details>|
+|`--exclude-module EXCLUDES`|<details><summary>Optional module or package (the Python name, not the path name) that will be **ignored** (as though it was not found).</summary><p>打包时忽略用不到的依赖库，减少文件大小</p></details>|
 |`--splash IMAGE_FILE`|<details><summary>(EXPERIMENTAL) Add an splash screen with the image IMAGE_FILE to the application.</summary><p>The splash screen can display progress updates while unpacking.</p></details>|
 </details>
 <details>
@@ -121,7 +120,7 @@ Inno Setup官网: https://jrsoftware.org/isinfo.php <br><br>
 |参数|作用|
 |:---|:---|
 |`--win-private-assemblies`|<details><summary>Any Shared Assemblies bundled into the application will be **changed into Private** Assemblies.</summary><p>This means the exact versions of these assemblies will always be used, and any newer versions installed on user machines at the system level will be ignored.</p></details>|
-|`--win-no-prefer-redirects`|While searching for Shared or Private Assemblies to bundle into the application, PyInstaller will <br>prefer not to follow policies that redirect to newer versions, and will try to **bundle the exact <br>versions** of the assembly.|
+|`--win-no-prefer-redirects`|While searching for Shared or Private Assemblies to bundle into the application, PyInstaller will prefer not to follow policies that redirect to newer versions, and will try to **bundle the exact versions** of the assembly.|
 </details>
 <details>
     <summary>Mac Os Specific Options</summary>
