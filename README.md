@@ -7,8 +7,8 @@ Pyinstaller是一种将python程序打包成独立可执行的工具。Inno Setu
 - [Getting Started](#Getting-Started)
     - [Packaging](#Packaging)
         - [Pyinstaller Arguments](#Pyinstaller-Arguments)
-        - [添加版本资源](#Add-Version-Resource-To-executables)
-    - [Inno Setup制作安装包](#Inno-Setup制作安装包)
+        - [Add Version Resource To executables](#Add-Version-Resource-To-executables)
+    - [Inno Setup Complier](#Inno-Setup制作安装包)
 ## Installation
 ### Pyinstaller Installation
     pip install pyinstaller
